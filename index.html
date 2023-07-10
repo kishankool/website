@@ -4,133 +4,174 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> KISHAN  </title>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fredericka+the+Great&family=Montserrat+Alternates:wght@100&family=Nixie+One&family=Quintessential&family=Rajdhani:wght@300&family=Rock+Salt&display=swap" rel="stylesheet">
-    <link rel='icon' href="images/favicon.png" />
-    <link rel="stylesheet" href="css/styles.css">
-    <script> src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" --></script>
+    <title>Kishan's webpage</title>
+    <link rel="stylesheet" href="dist/css/base.css"></link>
 </head>
 <body>
-    <header class="header-part">
-        <div class="logo-space">
-            <img src="images/favicon.ico" />
-            <span> KISHAN </span>
-        </div>
-        <nav id="menu">
-            <a  href="#about">About</a>
-            <a  href="#work">Work</a>
-            <a  href="#contact">Contact</a>
-        </nav>
-        <a href="javascript:void(0)" class="icon" onclick="myFunction()">
-            <img src="images/down-arrow.png" alt="menu">
-        </a>
-    </header>
-    <!-- remove.bg => transparent image website -->
-    <!-- <img src="images/outerspace.gif" /> -->
-    <div id="top-part">
-        <h1> I'm Kishan </h1>
-        <p id="tagline"> A <span class="pro">Pro</span>grammer and Devloper.</p>
-        <p id="extra"></p>
-        <br>
-        <img id="saturn" src="images/planet1.gif" />
-        <img id="human" src="images/human2.png" />
-    </div>
-    <div>
-        
-<!--         <p id="design2"></p> -->
-    </div>
-    <hr>
-    <div id="about">
-        <h3 class="c-heading"> About </h3>
-<!--         <p id="design1"></p> -->
-        <span class="span-text">
-            Hey there, I'm <i>Kishan</i>, final year student at IET Lucknow. I'm a <u>Front End Devloper</u> | <u>Coding</u> Enthusiast <u></u> from Lucknow, India.
-            I'm a <b style="color: chartreuse;">constant learner</b> & <b style="color: chartreuse;"> a passionate individual </b>, and I'm always looking for new ways to improve myself. As a big "Web-Head", I'm always trying to learn, absorb and improvise old ideas in new ways.
-            I'm Always looking forward to working with you, and I'm always open to discussing new ideas.
-
-            Check out my key skills:
-        </span>
-        <p style="visibility: hidden;">i</p>
-        <div>
-            <div id="skills">
-                <img src="images/brainstorming.png" />
-                <span> Coding Enthusiast  </span>
+    <div id="port-web" class="port-web">
+        <section class="navbar">
+            <div class="navbar-wrapper">
+                <div class="logo">
+                    <img src="src/static/svg/profil.svg" alt="logo">
+                    <p class="name">Kishan </p>
+                </div>
+                <div class="routing">
+                    <a href="/index.html" class="references">Home</a>
+                    <a href="#personal" class="references">About</a>
+                    <a href="#aboutme" class="references">Services</a>
+                    <a href="#talk" class="references talk">Let's Talk</a>
+                </div>
             </div>
-            <div id="skills">
-                <img src="images/web-programming.png" />
-                <span> Full-Stack Web-Development </span>
+        </section>
+        <section id="personal" class="personal">
+            <div class="wrapper">
+                <div class="about">
+                    I'm <span>Kishan</span>. I am a software and a web devloper from Lucknow,India.
+                </div>
+                <div class="personal-info-wrapper">
+                    <div class="skills software">
+                        <div class="skill">Software Devloper</div>
+                        <div class="experience">Fresher</div>
+                    </div>
+                    <div class="picture">
+                        <img src="../src/static/images/up.png" alt="kishan's picture">
+                    </div>
+                    <div class="skills web">
+                        <p class="skill">Web Devloper</p>
+                        <p class="experience">1 Year</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <hr>
-    <div id="work">
-        <h3 class="c-heading"> Works </h3>
-        <div id="work2"class="nlp">
-            <!-- <img src="images/natural-language-processing (1).png" style="float: left;"/> -->
-            <span class="span-text">
-                <h3> <u> Upcoming/Planned </u> Projects
-                </h3>
-                <br>
-                <li> <span class="limer"> Emotion Detection & Twitter Hate Speech Detection System </span> <span class="whiter"> : </span> <br>Web-Scraping + Analysis + Prediction </li>
-                <br>
-            </span>
-        </div>
-
-        <div id="work2" class="web">
-            <!-- <img src="images/coding.png" style="float: left;"/> -->
-            <span class="span-text">
-                <h3> <u> Front End Web Development </u> Project
-                </h3>
-                Whats fun in just making models? If not deploying them. I can build a front end website from scratch,can implement some good design.
-                <span style="color: chartreuse;"> Integration of AI </span> in my website is one of things i would like to implement in the future.
-                <br><br><br>
-                <img class="full-stack" src="images/full_stack.png" />
-            </span>
-        </div>
-        <br>
-    </div>
-    <hr>
-    <div id="contact">
-        <h3 class="c-heading"> Contact </h3>
-        <span class="span-text">
-            I know, it is so hard to find a friend who's loyal, caring, honest.
-            Lucky for you, I'm all of those and more! <br>
-            So let's <span style="color: chartreuse;"> connect</span> and work on <span class="whiter"> some exciting ideas! </span>
-        </span>
-        <form class="span-text" action="mailto:kishanmishra389@gmail.com" method="post" enctype="text/plain">
-            <input class="contact-input" type="text" name="Name" placeholder="Name" required >
-            <br><br>
-            <input  class = "contact-input" type="email" name="Email" placeholder="Email" required >
-            <br><br>
-            <input type="checkbox" name="">
-            <label>Do you want to recieve updates from me?</label>
-            <br>
-            <br>
-            <input class="btn" type="submit">
-
-            </input>
-        </form>
-    </div>
-<!--     <div style="position: relative;">
-        <p id="design4"></p>
-        <p id="design3"></p>
-    </div> -->
+        </section>
+        <section id="aboutme" class="aboutme">
+            <div class="layer">
+                <div class="about-wrapper">
+                    <div class="per-about">
+                        <div class="about-head">
+                            About Me.
+                        </div>
+                        <div class="about-text">
+                            Hey,I'm Kishan an aspiring devloper. I'm graduate from IET Lucknow
+                            in electronics and communication engineering.
+                            I'm a web devloper.
+                        </div>
+                    </div>
+                    <div class="head-footer">
+                        <div class="head-info">
+                            <div class="number">
+                                <p>20</p>   
+                            </div>
+                            <div class="head-info-text">
+                                Projects Done
+                            </div>
+                        </div>
+                        <div class="head-info">
+                            <div class="number">
+                                    <p>20</p>
+                            </div>
+                            <div class="head-info-text">
+                                Happy Clients
+                            </div>
+                        </div>
+                        <div class="head-info">
+                            <div class="number">
+                                    <p>100+</p>
+                            </div>
+                            <div class="head-info-text">
+                                Clients on Worldwide.
+                            </div>
+                        </div>
+                    </div>      
+                </div>
+            </div>
+        </section>
+        <section id="detailed" class="detailed">
+            <div class="detailed-wrapper">
+                <div class="tech-details">
+                    <div class="tech-boxes">
+                        <img src="./src/static/svg/paint.svg" alt="">
+                        <div class="tech-stack">
+                            Web Designer
+                        </div>
+                        <div class="tech-detail">
+                            I devlop websites my tech stack is Sass And Typescript.
+                        </div>
+                    </div>
+                    <div class="tech-boxes">
+                        <img src="../src/static/svg/computer.svg" alt="">
+                        <div class="tech-stack">
+                            Software Devloper
+                        </div>
+                        <div class="tech-detail">
+                            I'm an aspiring software devloper and looking for oppurtinitiesx`.
+                        </div>
+                    </div>
+                </div>
+                <div class="product-help">
+                    <div class="header">
+                        What I Can Do To Help Build Your Product
+                    </div>
+                    <p class="text">
+                        Ping me and lets collab on your project to devlop some really cool websites and apps.
+                    </p>
+                    <div class="details">
+                        <img src="../src/static/images/favicon.png" alt="">
+                        <div class="personal-details">
+                            <p class="name">
+                                Kishan Mishra    
+                            </p>
+                            <p class="des">
+                                Web Designer
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
     
+            </div>
+        </section>
+        <section id="talk" class="form">
+            <div class="form-wrapper">
+                <div class="form-text">
+                    Send me a <span> message</span>, I will be in touch with you shortly.
+                </div>
+                <form action="mailto:kishanmishra389@gmail.com" method="post" enctype="text/plain">
+                <div class="form-contact" >
+                    <div class="left">
+                        <input class="name" type="text" name="name" placeholder="Your Name">
+                        <input class="subject" type="text" name="subject" placeholder="Your Subject">
+                        <input class="message" type="text" name="message" placeholder="Your Message">
+                    </div>
+                    <div class="right" >
+                        <input class="email" type="email" name="email" placeholder="Enter Your Email Address">
+                        <button class="btn" type="submit">
+                            Send Email
+                        </button>
+                    </div>
+                </div>
+                </form>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/kishan-mishra-3007/">
+                        <img src="../src/static/svg/linked.svg" alt="">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC8BRZ1HFTs0KLlNXMUp8bww">
+                        <img src="../src/static/svg/yt.svg" alt="">
+                    </a>
+                    <a href="https://github.com/kishankool">
+                        <img src="../src/static/svg/github.svg" alt="">
+                    </a>
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+                <div class="signature">
+                    Created By <span> Kishan</span> | All Reserved
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>  
+
+    </div>
+    <script src="dist/js/base.js"></script>
 </body>
-<footer>
-    <nav>
-        <span class="social">
-            <img style="height: 20px; width: 20px;" src="images/linkedin.png" alt="LinkedIn">
-            <a href="https://www.linkedin.com/in/kishan-mishra-3007/"> LinkedIn </a>
-        </span>
-        <span class="social">
-            <img style="height: 20px; width: 20px;" src="images/github(1).png" alt="LinkedIn">
-            <a href="https://github.com/kishankool"> Github </a>
-        </span>
-      </nav>
-    <br>
-    <span id="copyright"> Copyright by Kishan @ 2022 </span>
-</footer>
-<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-<script src="index.js"></script>
 </html>

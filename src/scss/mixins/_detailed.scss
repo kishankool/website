@@ -1,0 +1,79 @@
+@mixin detailed-screen{
+    .detailed{
+        padding: 100px 121px;
+        .detailed-wrapper{
+            display: flex;
+            gap: 145px;
+            max-width: 1197px;
+            .tech-details{
+                display: flex;
+                gap: 15px;
+                color: #ffffff;
+                .tech-boxes{
+                    display: grid;
+                    justify-items: center;
+                    height: 460px;
+                    border-radius: 30px;
+                    background: var(--pp-2-purple, linear-gradient(214deg, #B75CFF 0%, #671AE4 100%));
+                    box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+                    img{
+                        margin-top: 100px ;
+                        margin-left: 125px;
+                        margin-right:123px ;
+                    }
+                    .tech-stack{
+                        color: #fff;
+                        font-size: 30px;
+                        font-weight: 700;
+                    }
+                    .tech-detail{
+                        margin-left: 22px;
+                        margin-right: 21px;
+                        text-align: center;
+                        color: rgba(255, 255, 255, 0.50);
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                }
+            }
+            .product-help{
+                .header{
+                    font-family: Poppins;
+                    font-weight: 600;
+                    font-size: 40px;
+                }
+                .text{
+                    color: rgba(0, 0, 0, 0.50);
+                    font-size: 20px;
+                    font-weight: 400;
+                }
+                .details{
+                    display: flex;
+                    gap: 15px;
+                    color: #000;
+                    img{
+                        height: 71px;
+                        width: 56px;
+                    }
+                    .personal-details{
+                        display: grid;
+                        .name{
+                            margin-top: 6px;
+                            font-size: 20px;
+                            font-weight: 500;
+                        }
+                        .des{
+                            margin-top: -21px;
+                            font-size: 15px;
+                            font-weight: 300;
+                        }
+                    }
+                }
+                hr{
+                    margin-top: 18px;
+                    background: #000;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import "mixins/navbar";
+@import "mixins/info";
+@import "mixins/about";
+@import "mixins/detailed";
+@import "mixins/form";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    font-family: 'Poppins';
+    @include main-screen;
+    @include about-screen;
+    @include info-screen;
+    @include detailed-screen;
+    @include form-screen;
+}

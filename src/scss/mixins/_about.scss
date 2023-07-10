@@ -1,0 +1,61 @@
+@mixin about-screen{
+    .personal{
+        padding: 80px 177px 45px 178px;
+        .wrapper{
+            display: grid;
+            max-width: 1085px;
+            gap: 30px;
+            .about{
+                font-weight: 700;
+                font-size: 50px;
+                line-height: 150%;
+                text-align: center;
+                letter-spacing: 0.3px;
+                span{
+                    color:  #B75CFF,
+                }
+            }
+            .personal-info-wrapper{
+                display: flex;
+                padding-left: 45px;
+                padding-right: 45px;
+                gap: 15px;
+                .skills{
+                    display: flex;
+                    flex-direction: column;
+                    gap:10px;
+                    max-height: 100px;
+                    background: linear-gradient(214.02deg, #B75CFF 6.04%, #671AE4 92.95%);
+                    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+                    border-radius: 200px;
+                    .skill{
+                        margin: 24px 67px 10px 67px;
+                        font-weight: 700;
+                        font-size: 16spx;
+                        color: #FFFFFF;
+                    }
+                    .experience{
+                        margin: 0  116px 24px 116px;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 120%;
+                        color: #FFFFFF;
+                    }
+                }
+                .web{
+                    align-self: flex-end;
+                }
+                .picture{
+                    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+                    border-radius: 200px;
+                    overflow: hidden;
+                    img{
+                        width: 393px;
+                        height: 600px;
+                    }
+                }
+            }
+        }
+    }
+
+}

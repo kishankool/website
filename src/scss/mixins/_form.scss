@@ -1,0 +1,83 @@
+@mixin form-screen{
+    .form{
+        color: #FFFFFF;
+        padding: 100px 222px 54px 223px;
+        background: #000;
+        .form-wrapper{
+            display: grid;
+            gap: 50px;
+            max-width: 1000px;
+            .form-text{
+                text-align: center;
+                font-size: 50px;
+                font-weight: 400;
+                span{
+                    color: purple;
+                }
+            }
+            .form-contact{
+                display: flex;
+                justify-content: space-between;
+                gap: 217px;
+                font-family: Poppins;
+                font-size: 20px;
+                font-weight: 500;
+                input{
+                    background: #000;
+                    outline: 0;
+                    border-width: 0 0 2px;
+                    border-color: rgba(255, 255, 255, 0.50);
+                    color: rgba(255, 255, 255, 0.50);
+                    font-family: Poppins;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 120%;
+                }
+                input:focus{
+                    color: #FFF;
+                    border-color: #FFF;
+                    font-family: Poppins;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 120%;
+                }
+                .left,.right{
+                    margin-top: 50px;
+                    display: grid;
+                    gap: 108.5px;
+                }
+                .btn{
+                    display: inline-flex;
+                    padding: 20px 40px;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 30px;
+                    background: var(--pp-2-purple, linear-gradient(214deg, #B75CFF 0%, #671AE4 100%));
+                }
+            }
+            .socials{
+                justify-self: center;
+                display: inline-flex;
+                align-items: flex-start;
+                gap: 25px;
+                max-width: 325px;
+            }
+            .signature{
+                color: rgba(255, 255, 255, 0.50);
+                text-align: center;
+                font-family: Poppins;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 180%;
+                letter-spacing: 0.3px;
+                span{
+                    color: #FFFFFF;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
