@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>K DevStack</title>
+
+  <!-- Favicon icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/code.svg" />
+
+  <!-- google fonts -->
+  <link href="//fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-starter.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+</head>
+
+<body>
+
+
+  <!-- header -->
+  <header id="site-header" class="fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg stroke">
+        <a class="navbar-brand" href="index">
+          <span class="fa fa-code"></span>
+          K <b class="mainTitle">DevStack</b>
+        </a>
+        <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+          <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item @@index__active">
+              <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item @@about__active">
+              <a class="nav-link" href="about">About</a>
+            </li>
+            <li class="nav-item @@project__active">
+              <a class="nav-link" href="projects">Projects</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contact">Contact</a>
+            </li>
+            <li id="statsNavItem" class="nav-item @@stats__active" style="display: none;">
+              <a class="nav-link" href="stats">Stats</a>
+            </li>
+            <li id="logoutNavItem" class="nav-item" style="display: none;">
+              <a class="nav-link" href="#" onclick="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+
+        <script>
+          var email = localStorage.getItem("email");
+          var statsNavItem = document.getElementById("statsNavItem");
+          var logoutNavItem = document.getElementById("logoutNavItem");
+
+          if (email) {
+            // Email exists, unhide the list items for stats and logout
+            statsNavItem.style.display = "";
+            logoutNavItem.style.display = "";
+          } else {
+            // Email does not exist, hide the list items for stats and logout
+            statsNavItem.style.display = "none";
+            logoutNavItem.style.display = "none";
+          }
+
+          function logout() {
+            // Remove the email from localStorage
+            localStorage.removeItem("email");
+
+            // Perform any additional logout actions if needed
+
+            alert("Logout Successfully");
+
+            // Redirect the user to the desired page
+            window.location.href = "index"; // Replace "index" with the appropriate page URL
+          }
+        </script>
+
+        <!-- toggle switch for light and dark theme -->
+        <div class="mobile-position">
+          <nav class="navigation">
+            <div class="theme-switch-wrapper">
+              <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="mode-container">
+                  <i class="gg-sun"></i>
+                  <i class="gg-moon"></i>
+                </div>
+              </label>
+            </div>
+          </nav>
+        </div>
+        <!-- //toggle switch for light and dark theme -->
+      </nav>
+    </div>
+  </header>
+  <!-- //header -->
+
+  <!-- contact breadcrumb -->
+  <section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+      <div class="container py-2">
+        <h2 class="title">Contact</h2>
+        <ul class="breadcrumbs-custom-path mt-2">
+          <li><a href="index">Home</a></li>
+          <li><i class="fa fa-angle-right mx-2" aria-hidden="true"></i></li>
+          <li class="active">Contact Me </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- contact breadcrumb -->
+
+  <!-- contact block -->
+  <!-- contact1 -->
+  <section class="w3l-contact-1 py-5">
+    <div class="contacts-9 py-lg-5 py-md-4">
+      <div class="container">
+        <div class="d-grid contact-view">
+          <div class="cont-details">
+            <div class="cont-top">
+              <div class="cont-left text-center">
+                <span class="fa fa-phone text-primary"></span>
+              </div>
+              <div class="cont-right">
+                <h6>Call Me</h6>
+                <p><a href="tel:+91 731 753 4768">+91 731 534 708</a></p>
+              </div>
+            </div>
+            <div class="cont-top margin-up">
+              <div class="cont-left text-center">
+                <span class="fa fa-phone text-primary"></span>
+              </div>
+              <div class="cont-right">
+                <h6>Whatsapp Me</h6>
+                <p><a href="https://wa.me/7317534768">+91 731 534 708</a></p>
+              </div>
+            </div>
+            <div class="cont-top margin-up">
+              <div class="cont-left text-center">
+                <span class="fa fa-envelope-o text-primary"></span>
+              </div>
+              <div class="cont-right">
+                <h6>Email Me</h6>
+                <p><a href="mailto:kishanmishrawork@gmail.com" class="mail">kishanmishrawork@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="cont-top margin-up">
+              <div class="cont-left text-center">
+                <span class="fa fa-map-marker text-primary"></span>
+              </div>
+              <div class="cont-right">
+                <h6>Location</h6>
+                <p>Rohit Tower Heineihman Chauraha,</br> Near Sahara Hospital, Lucknow.</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-content-9">
+            <form id="contactForm" method="post" action="mailto:kishanmishrawork@gmail.com" enctype="text/plain">
+              <div class="twice-two">
+                <input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="Name" required>
+                <input type="email" class="form-control" name="w3lSender" id="w3lSender" placeholder="Email" required>
+              </div>
+              <div class="twice-two">
+                <input type="text" class="form-control" name="w3lSubject" id="w3lSubject" placeholder="Subject" required>
+                <input type="tel" class="form-control" name="w3lPhone" id="w3lPhone" placeholder="Phone" pattern="[0-9]+" required>
+              </div>
+              <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message" required></textarea>
+              <div class="text-right">
+                <button type="submit" class="btn btn-primary btn-style mt-4">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- /contact1 -->
+  <div class="map-iframe">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6329955748197!2d81.01851007558209!3d26.851622976683615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2fabafbd439%3A0xc82ef285fbdc8761!2sHeinemann%20Chauraha!5e0!3m2!1sen!2sin!4v1692603199981!5m2!1sen!2sin" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <!-- //contact block -->
+  <!-- Footer -->
+  <section class="w3l-footer py-sm-5 py-4">
+    <div class="container">
+      <div class="footer-content">
+        <div class="row">
+          <div class="col-lg-8 footer-left">
+            <p class="m-0">
+              &copy; 2023 K <b>DevStack</b>. Developed by
+              <a href="index">Kishan Mishra</a>
+            </p>
+          </div>
+          <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
+            <ul class="social m-0 p-0">
+              <li>
+                <a href="https://www.facebook.com/kishanmishra.kis" target="_blank"><span class="fa fa-facebook-square"></span></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/kishan-mishra-3007/" target="_blank"><span class="fa fa-linkedin-square"></span></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/cut_it_kishan/" target="_blank"><span class="fa fa-instagram"></span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll to top button -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+      <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+    </button>
+    <script>
+      // Show the "scroll to top" button when the user scrolls down 20px from the top
+      window.onscroll = function() {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("movetop").style.display = "block";
+        } else {
+          document.getElementById("movetop").style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <!-- /Scroll to top button -->
+  </section>
+  <!-- //Footer -->
+
+  <!-- all js scripts and files here -->
+
+  <script src="assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+
+  <script src="assets/js/jquery-3.3.1.min.js"></script><!-- default jQuery -->
+
+  <!-- /typig-text-->
+  <script>
+    // Disable right-click
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+    });
+
+    // Disable Ctrl key
+    document.addEventListener("keydown", function(e) {
+      if (e.ctrlKey) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    });
+
+    // Disable F12 key
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "F12" || e.keyCode === 123) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    });
+
+
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+
+    const textArray = ["Freelancer", "Web developer"];
+    const typingDelay = 200;
+    const erasingDelay = 10;
+    const newTextDelay = 100; // Delay between current and next text
+    let textArrayIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        cursorSpan.classList.remove("typing");
+        setTimeout(erase, newTextDelay);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        // add class 'typing' if there's none
+        if (!cursorSpan.classList.contains("typing")) {
+          cursorSpan.classList.add("typing");
+        }
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, 0);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        cursorSpan.classList.remove("typing");
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+      if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+  </script>
+  <!-- //typig-text-->
+
+  <!-- services owlcarousel -->
+  <script src="assets/js/owl.carousel.js"></script>
+
+  <!-- script for services -->
+  <script>
+    $(document).ready(function() {
+      $('.owl-two').owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: false,
+        responsiveClass: true,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        autoplaySpeed: 1000,
+        autoplayHoverPause: false,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false
+          },
+          480: {
+            items: 1,
+            nav: false
+          },
+          700: {
+            items: 1,
+            nav: false
+          },
+          1090: {
+            items: 3,
+            nav: false
+          }
+        }
+      })
+    })
+  </script>
+  <!-- //script for services -->
+
+  <!-- script for tesimonials carousel slider -->
+  <script>
+    $(document).ready(function() {
+      $("#owl-demo1").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false
+          },
+          736: {
+            items: 1,
+            nav: false
+          },
+          1000: {
+            items: 2,
+            nav: false,
+            loop: false
+          }
+        }
+      })
+    })
+  </script>
+  <!-- //script for tesimonials carousel slider -->
+
+  <!-- video popup -->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.popup-with-zoom-anim').magnificPopup({
+        type: 'inline',
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: 'auto',
+
+        closeBtnInside: true,
+        preloader: false,
+
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in'
+      });
+
+      $('.popup-with-move-anim').magnificPopup({
+        type: 'inline',
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: 'auto',
+
+        closeBtnInside: true,
+        preloader: false,
+
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-slide-bottom'
+      });
+    });
+  </script>
+  <!-- //video popup -->
+
+  <!-- stats number counter-->
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/jquery.countup.js"></script>
+  <script>
+    $('.counter').countUp();
+  </script>
+  <!-- //stats number counter -->
+
+  <!-- disable body scroll which navbar is in active -->
+  <script>
+    $(function() {
+      $('.navbar-toggler').click(function() {
+        $('body').toggleClass('noscroll');
+      })
+    });
+  </script>
+  <!-- disable body scroll which navbar is in active -->
+
+  <!--/MENU-JS-->
+  <script>
+    $(window).on("scroll", function() {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function() {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function() {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function() {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+  </script>
+  <!--//MENU-JS-->
+
+  <!-- bootstrap js -->
+  <script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

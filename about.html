@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>K DevStack</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/code.svg" />
+
+    <!-- google fonts -->
+    <link
+      href="//fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style-starter.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg stroke">
+          <a class="navbar-brand" href="index">
+            <span class="fa fa-code"></span>
+            K <b class="mainTitle">DevStack</b>
+          </a>
+          <button
+            class="navbar-toggler collapsed bg-gradient"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+            <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item @@index__active">
+                <a class="nav-link" href="index"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="about">About</a>
+              </li>
+              <li class="nav-item @@project__active">
+                <a class="nav-link" href="projects">Projects</a>
+              </li> 
+              <li class="nav-item @@contact__active">
+                <a class="nav-link" href="contact">Contact</a>
+              </li>
+              <li
+                id="statsNavItem"
+                class="nav-item @@stats__active"
+                style="display: none"
+              >
+                <a class="nav-link" href="stats">Stats</a>
+              </li>
+              <li id="logoutNavItem" class="nav-item" style="display: none">
+                <a class="nav-link" href="#" onclick="logout()">Logout</a>
+              </li>
+            </ul>
+          </div>
+
+          
+
+          <!-- toggle switch for light and dark theme -->
+          <div class="mobile-position">
+            <nav class="navigation">
+              <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <div class="mode-container">
+                    <i class="gg-sun"></i>
+                    <i class="gg-moon"></i>
+                  </div>
+                </label>
+              </div>
+            </nav>
+          </div>
+          <!-- //toggle switch for light and dark theme -->
+        </nav>
+      </div>
+    </header>
+    <!-- //header -->
+
+    <!-- about breadcrumb -->
+    <section class="w3l-about-breadcrumb text-center">
+      <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+        <div class="container py-2">
+          <h2 class="title">About</h2>
+          <ul class="breadcrumbs-custom-path mt-2">
+            <li><a href="index">Home</a></li>
+            <li><i class="fa fa-angle-right mx-2" aria-hidden="true"></i></li>
+            <li class="active">About</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- //about breadcrumb -->
+
+    <!-- about page about section -->
+    <section class="w3l-aboutblock1" id="about">
+      <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="position-relative">
+                <img
+                  src="assets/images/myphoto.jpg"
+                  alt=""
+                  class="radius-image img-fluid"
+                />
+              </div>
+            </div>
+            <div class="col-lg-8 mt-lg-0 mt-5">
+              <h5 class="title-small mb-2">
+                Welcome, I am a Full Stack Developer
+              </h5>
+              <h3 class="title-big">
+                With Over 1 Years of Professional Experience
+              </h3>
+              <p class="mt-4">
+                I deliver high-quality solutions that meet my clients' needs.
+                With a strong technical background and a passion for innovation,
+                I create efficient web applications. My expertise ensures
+                exceptional user experiences and seamless functionality.
+              </p>
+              <div class="my-info mt-4">
+                <div class="single-info">
+                  <span>Name:</span>
+                  <p>Kishan Mishra</p>
+                </div>
+                <div class="single-info">
+                  <span>Age:</span>
+                  <p>23 Years</p>
+                </div>
+                <div class="single-info">
+                  <span>Location:</span>
+                  <p>Lucknow, India</p>
+                </div>
+                <div class="single-info">
+                  <span>Email:</span>
+                  <p>
+                    <a href="mailto:kishanmishrawork@gmail.com"
+                      >kishanmishrawork@gmail.com</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="my-social mt-lg-5 mt-4">
+                <a
+                  href="KishanMishra_sde.pdf"
+                  class="btn btn-style btn-primary"
+                  download="KishanMishra_sde.pdf"
+                  ><b
+                    ><i class="fa fa-cloud-download" aria-hidden="true"></i>
+                    Download Resume</b
+                  ></a
+                >
+                <ul class="social m-0 p-0">
+                  
+                  <li>
+                    <a href="https://www.instagram.com/cut_it_kishan/"
+                      ><span class="fa fa-instagram" target="_blank"></span
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/kishanmishr.kis"
+                      target="_blank"
+                      ><span class="fa fa-facebook"></span
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/kishan-mishra-3007/"
+                      target="_blank"
+                      ><span class="fa fa-linkedin"></span
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //about page about section -->
+
+    <!-- about page second section -->
+    <section class="py-5 w3l-resume">
+      <div class="container py-lg-5 py-3">
+        <h5 class="title-small mb-2">Welcome</h5>
+        <h3 class="title-big mb-4">
+          Empower Your Business with Innovative Full Stack Development
+        </h3>
+        <p>
+          I am an experienced Full Stack Developer based in Lucknow, Uttar Pradesh,
+          India, dedicated to delivering exceptional software solutions. With a
+          deep understanding and proficiency in multiple programming languages,
+          I possess a versatile skill set that enables me to tackle complex
+          challenges across various development domains.
+        </p>
+        <div class="row features-w3pvt-main mt-5 pt-md-3" id="features">
+          <div class="col-lg-4 col-md-6 feature-gird">
+            <div class="row features-hny-inner-gd">
+              <div class="col-md-2 col-2 featured_grid_left">
+                <div class="icon_left_grid">
+                  <span class="fa fa-code" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="col-md-10 col-10 featured_grid_right_info">
+                <h4><a class="link-hny" href="">Responsive Design</a></h4>
+                <p>Crafting engaging and adaptable designs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 feature-gird mt-md-0 mt-4">
+            <div class="row features-hny-inner-gd">
+              <div class="col-md-2 col-2 featured_grid_left">
+                <div class="icon_left_grid">
+                  <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="col-md-10 col-10 featured_grid_right_info">
+                <h4><a class="link-hny" href="">Powerful Editor</a></h4>
+                <p>Creating compelling content with a robust editor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 feature-gird mt-lg-0 mt-md-5 mt-4">
+            <div class="row features-hny-inner-gd">
+              <div class="col-md-2 col-2 featured_grid_left">
+                <div class="icon_left_grid">
+                  <span class="fa fa-desktop" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="col-md-10 col-10 featured_grid_right_info">
+                <h4><a class="link-hny" href="">Creative Design</a></h4>
+                <p>
+                  Innovative design techniques for stunning user interfaces.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //about page about section -->
+
+    <!-- about page third section -->
+    <section class="w3l-content-6 py-5">
+      <div class="content-6-mian py-lg-5 py-md-4">
+        <div class="container">
+          <div class="content-info-in row">
+            <div class="content-gd col-lg-5">
+              <h3 class="title-big mb-4">Driven by the Pursuit of Success</h3>
+              <p>
+                With a relentless drive for excellence, I am motivated to
+                achieve success in every endeavor. I believe in delivering
+                top-notch solutions that surpass expectations and drive
+                meaningful outcomes.
+              </p>
+            </div>
+            <div class="content-gd col-lg-6 offset-lg-1">
+              <div class="progress-info">
+                <h6 class="progress-tittle">Front End Development</h6>
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-striped"
+                    role="progressbar"
+                    style="width: 92%"
+                    aria-valuenow="92"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress-info">
+                <h6 class="progress-tittle">Ideas & Technology</h6>
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-striped"
+                    role="progressbar"
+                    style="width: 95%"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress-info">
+                <h6 class="progress-tittle">Back-End Development</h6>
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-striped"
+                    role="progressbar"
+                    style="width: 89%"
+                    aria-valuenow="89"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress-info mb-0">
+                <h6 class="progress-tittle">Data Structures And Algorithms</h6>
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-striped"
+                    role="progressbar"
+                    style="width: 95%"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about page third section -->
+
+    <!-- subscribe block -->
+    <section class="abouthy-img-grids">
+      <div class="img-one">
+        <img
+          src="assets/images/g5.jpg"
+          alt=" "
+          class="img-fluid"
+          style="border-top-left-radius: 10%; border-bottom-left-radius: 10%"
+        />
+      </div>
+      <div class="img-one content-mid">
+        <h3 class="title-big">
+          Stay Updated, Subscribe to Our Free Newsletter!
+        </h3>
+        <form action="/" method="POST" class="subscribe-form">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+      <div class="img-one">
+        <img
+          src="assets/images/g3.jpg"
+          alt=" "
+          class="img-fluid"
+          style="border-top-right-radius: 10%; border-bottom-right-radius: 10%"
+        />
+      </div>
+    </section>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyA47iY8c2PMNOEP_GD1CgG-60Dvp-1NTGg",
+        authDomain: "v-devstack.firebaseapp.com",
+        projectId: "v-devstack",
+        storageBucket: "v-devstack.appspot.com",
+        messagingSenderId: "124914226391",
+        appId: "1:124914226391:web:978e6518d3220627630c92",
+        measurementId: "G-H177XK6L62",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Get a reference to the Realtime Database
+      var database = firebase.database();
+
+      // Add event listener to the form submit event
+      document
+        .querySelector(".subscribe-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission behavior
+
+          // Get the email input value
+          var email = document.querySelector('input[name="email"]').value;
+
+          // Get additional information
+          const currentTime = new Date().toLocaleString("en-US", {
+            month: "2-digit",
+            day: "2-digit",
+            year: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            hour12: true,
+          });
+          const browser = getBrowserName();
+          const device = getDeviceType();
+          const version = getDeviceVersion();
+
+          // Add the email, browser, current time, and device to the "Subscribe" collection in the Realtime Database
+          database
+            .ref("Subscribe")
+            .push({
+              email: email,
+              currentTime: currentTime,
+              browser: browser,
+              device: device,
+              version: version,
+            })
+            .then(function () {
+              // Clear the email input
+              document.querySelector('input[name="email"]').value = "";
+              alert("Email subscribed successfully!");
+            })
+            .catch(function (error) {
+              console.error("Error subscribing email:", error);
+              alert(
+                "An error occurred while subscribing email. Please try again."
+              );
+            });
+        });
+
+      function getBrowserName() {
+        const userAgent = navigator.userAgent;
+        if (userAgent.includes("Firefox")) {
+          return "Firefox";
+        } else if (userAgent.includes("Chrome")) {
+          return "Chrome";
+        } else if (userAgent.includes("Safari")) {
+          return "Safari";
+        } else if (userAgent.includes("Opera")) {
+          return "Opera";
+        } else if (userAgent.includes("Edge")) {
+          return "Microsoft Edge";
+        } else if (userAgent.includes("IE")) {
+          return "Internet Explorer";
+        } else {
+          return "Unknown";
+        }
+      }
+
+      function getDeviceType() {
+        const userAgent = navigator.userAgent;
+        if (userAgent.includes("Mobile")) {
+          return "Mobile";
+        } else if (userAgent.includes("Tablet")) {
+          return "Tablet";
+        } else {
+          return "Desktop";
+        }
+      }
+
+      function getDeviceVersion() {
+        const userAgent = navigator.userAgent;
+        let os = "Unknown";
+        let version = "Unknown";
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          os = "iOS";
+          const match = userAgent.match(/OS (\d+)_(\d+)_?(\d+)?/);
+          if (match) {
+            version = match.slice(1).map(Number).join(".");
+          }
+        } else if (/Android/.test(userAgent)) {
+          os = "Android";
+          const match = userAgent.match(/Android (\d+)\.?(\d+)?\.?(\d+)?/);
+          if (match) {
+            version = match.slice(1).map(Number).join(".");
+          }
+        } else if (/Mac/.test(userAgent)) {
+          os = "macOS";
+          const match = userAgent.match(/Mac OS X (\d+)[_.](\d+)[_.](\d+)/);
+          if (match) {
+            version = match.slice(1).map(Number).join(".");
+          }
+        } else if (/Windows/.test(userAgent)) {
+          os = "Windows";
+          const match = userAgent.match(/Windows NT (\d+)\.?(\d+)?/);
+          if (match) {
+            version = match.slice(1).map(Number).join(".");
+          }
+        } else {
+          const match = userAgent.match(
+            /(?:Firefox|Chrome|Safari|Opera|Edge|IE)\/(\d+)/
+          );
+          if (match) {
+            version = match.slice(1).map(Number).join(".");
+          }
+        }
+
+        return {
+          os: os,
+          version: version,
+        };
+      }
+    </script>
+    <!-- //subscribe block -->
+
+    <!-- achievements block -->
+    <section class="w3l-services">
+      <div class="w3l-achievements py-5" id="services">
+        <div class="container py-lg-5">
+          <h5 class="title-small text-center">Recognitions</h5>
+          <h3 class="title-big text-center mb-sm-5 mb-4">
+            Personal Achievements
+          </h3>
+          <div class="row">
+            <div class="col-lg-6 item">
+              <div class="card">
+                <div class="box-wrap">
+                  <div class="icon">
+                    <span class="fa fa-globe"></span>
+                  </div>
+                  <h4><a href="">Website of the Day</a></h4>
+                  <p>
+                    Recognized for developing an exceptional website that
+                    showcases exemplary design and functionality, captivating
+                    users and delivering a seamless online experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 item">
+              <div class="card">
+                <div class="box-wrap">
+                  <div class="icon">
+                    <span class="fa fa-code"></span>
+                  </div>
+                  <h4><a href="">Award-Winning Website</a></h4>
+                  <p>
+                    Awarded for the development of an outstanding website that
+                    demonstrates exemplary coding practices, technical
+                    expertise, and innovative solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 item">
+              <div class="card">
+                <div class="box-wrap mb-lg-0">
+                  <div class="icon">
+                    <span class="fa fa-trophy"></span>
+                  </div>
+                  <h4><a href="">Honorable Mention</a></h4>
+                  <p>
+                    Received an honorable mention for exceptional skills and
+                    contributions in web development, showcasing creativity,
+                    dedication, and a strong work ethic.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 item">
+              <div class="card">
+                <div class="box-wrap mb-0">
+                  <div class="icon">
+                    <span class="fa fa-area-chart"></span>
+                  </div>
+                  <h4><a href="">Development Excellence</a></h4>
+                  <p>
+                    Acknowledged for consistently delivering outstanding development
+                    solutions that meet client requirements and elevate the
+                    visual identity of brands.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //achievements block -->
+
+
+
+    <style>
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .certificate-item {
+        background: #fff;
+        height: 16.625rem;
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.2s ease-in-out;
+        border-radius: 0.625rem;
+        display: flex;
+        justify-content: center;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        align-items: center;
+        position: relative;
+        perspective: 800px;
+        transform-style: preserve-3d;
+        text-align: center;
+      }
+
+      .certificate-item:hover,
+      .certificate-item:focus {
+        transform: scale(1.05) rotateX(-10deg) rotateY(5deg);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+    </style>
+    <!-- //gallery block -->
+
+    <!-- Footer -->
+    <section class="w3l-footer py-sm-5 py-4">
+      <div class="container">
+        <div class="footer-content">
+          <div class="row">
+            <div class="col-lg-8 footer-left">
+              <p class="m-0">
+                &copy; 2023 K <b>DevStack</b>. Developed by
+                <a href="index">Kishan Mishra</a>
+              </p>
+            </div>
+            <div
+              class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3"
+            >
+              <ul class="social m-0 p-0">
+                <li>
+                  <a href="https://www.facebook.com/vikky.padia" target="_blank"
+                    ><span class="fa fa-facebook-square"></span
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/vivek-padia-4a30601b5/"
+                    target="_blank"
+                    ><span class="fa fa-linkedin-square"></span
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/_vivek_padia_/"
+                    target="_blank"
+                    ><span class="fa fa-instagram"></span
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll to top button -->
+      <button onclick="topFunction()" id="movetop" title="Go to top">
+        <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+      </button>
+      <script>
+        // Show the "scroll to top" button when the user scrolls down 20px from the top
+        window.onscroll = function () {
+          scrollFunction();
+        };
+
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+          ) {
+            document.getElementById("movetop").style.display = "block";
+          } else {
+            document.getElementById("movetop").style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
+      <!-- /Scroll to top button -->
+    </section>
+    <!-- //Footer -->
+
+    <!-- all js scripts and files here -->
+
+    <script src="assets/js/theme-change.js"></script>
+    <!-- theme switch js (light and dark)-->
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <!-- default jQuery -->
+
+    <!-- /typig-text-->
+    <script>
+      // Disable right-click
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+
+      // Disable Ctrl key
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      });
+
+      // Disable F12 key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "F12" || e.keyCode === 123) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      });
+
+      const typedTextSpan = document.querySelector(".typed-text");
+      const cursorSpan = document.querySelector(".cursor");
+
+      const textArray = [
+        "UI/UX Designer",
+        "Freelancer",
+        "Full stack developer",
+        "QA",
+      ];
+      const typingDelay = 200;
+      const erasingDelay = 10;
+      const newTextDelay = 100; // Delay between current and next text
+      let textArrayIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+          if (!cursorSpan.classList.contains("typing"))
+            cursorSpan.classList.add("typing");
+          typedTextSpan.textContent +=
+            textArray[textArrayIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          // add class 'typing' if there's none
+          if (!cursorSpan.classList.contains("typing")) {
+            cursorSpan.classList.add("typing");
+          }
+          typedTextSpan.textContent = textArray[textArrayIndex].substring(0, 0);
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          textArrayIndex++;
+          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+          setTimeout(type, typingDelay);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // On DOM Load initiate the effect
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+      });
+    </script>
+    <!-- //typig-text-->
+
+    <!-- services owlcarousel -->
+    <script src="assets/js/owl.carousel.js"></script>
+
+    <!-- stats number counter-->
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.countup.js"></script>
+    <script>
+      $(".counter").countUp();
+    </script>
+    <!-- //stats number counter -->
+
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+      $(function () {
+        $(".navbar-toggler").click(function () {
+          $("body").toggleClass("noscroll");
+        });
+      });
+    </script>
+    <!-- disable body scroll which navbar is in active -->
+
+    <!--/MENU-JS-->
+    <script>
+      $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+          $("#site-header").addClass("nav-fixed");
+        } else {
+          $("#site-header").removeClass("nav-fixed");
+        }
+      });
+
+      //Main navigation Active Class Add Remove
+      $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+      });
+      $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+          if ($(window).width() > 991) {
+            $("header").removeClass("active");
+          }
+        });
+      });
+    </script>
+    <!--//MENU-JS-->
+
+    <!-- bootstrap js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

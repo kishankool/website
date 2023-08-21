@@ -1,0 +1,23 @@
+{
+  "projects": [
+    {
+      "title": "Virtual Study Room",
+      "description": "The project leverages the power of deep learning and natural language processing techniques to automatically classify the sentiment expressed in movie reviews as positive or negative. By accurately predicting the sentiment of movie reviews, this analysis provides valuable insights into audience perceptions and sentiments towards movies.",
+      "owner": "Kishan Mishra",
+      "github": "https://github.com/kishankool/virtualstudyroom"
+    },
+    {
+      "title": "Web Chat",
+      "description": " WebChat project! This is a real-time chatting web application built using the MERN (MongoDB, Express, React, Node.js) stack. The app allows users to create accounts, join chat rooms, and engage in real-time conversations with other users. The application is hosted on Render for easy access and deployment.",
+      "owner": "Kishan Mishra",
+      "github": "https://github.com/kishankool/webchat"
+    },
+    {
+      "title": "Buy It Up",
+      "description": " A mobile app built using React Native and Expo! This app offers a convenient way to browse and select recipes that you can add to your cart. The app also features a secure login system utilizing OTP via SMS. Please note that the OTP sending functionality is powered by a trial Twilio account, so there might be some delays during OTP delivery. Don't worry, if it doesn't work on the first attempt, give it a couple more tries—it's designed to work reliably!",
+      "owner": "Kishan Mishra",
+      "github": "https://github.com/kishankool/webchat"
+    }
+
+  ]
+}
