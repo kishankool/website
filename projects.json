@@ -17,6 +17,12 @@
       "description": " A mobile app built using React Native and Expo! This app offers a convenient way to browse and select recipes that you can add to your cart. The app also features a secure login system utilizing OTP via SMS. Please note that the OTP sending functionality is powered by a trial Twilio account, so there might be some delays during OTP delivery. Don't worry, if it doesn't work on the first attempt, give it a couple more tries—it's designed to work reliably!",
       "owner": "Kishan Mishra",
       "github": "https://github.com/kishankool/webchat"
+    },
+    {
+      "title": "OTP API",
+      "description": "The OTP Generation and SMS Sending API is a simple service that generates a one-time password (OTP) and sends it to a specified phone number via Twilio's trial SMS service. This API is designed to be easy to use and integrate into your applications to enable secure authentication and verification processes.",
+      "owner": "Kishan Mishra",
+      "github": "https://github.com/kishankool/otpserver"
     }
 
   ]
