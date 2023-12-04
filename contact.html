@@ -19,6 +19,15 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5SKBH54W9R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-5SKBH54W9R');
+</script>
 
 <body>
 
@@ -31,7 +40,9 @@
           <span class="fa fa-code"></span>
           K <b class="mainTitle">DevStack</b>
         </a>
-        <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
+          data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
           <span class="navbar-toggler-icon fa icon-close fa-times"></span>
         </button>
@@ -173,10 +184,13 @@
                 <input type="email" class="form-control" name="w3lSender" id="w3lSender" placeholder="Email" required>
               </div>
               <div class="twice-two">
-                <input type="text" class="form-control" name="w3lSubject" id="w3lSubject" placeholder="Subject" required>
-                <input type="tel" class="form-control" name="w3lPhone" id="w3lPhone" placeholder="Phone" pattern="[0-9]+" required>
+                <input type="text" class="form-control" name="w3lSubject" id="w3lSubject" placeholder="Subject"
+                  required>
+                <input type="tel" class="form-control" name="w3lPhone" id="w3lPhone" placeholder="Phone"
+                  pattern="[0-9]+" required>
               </div>
-              <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message" required></textarea>
+              <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message"
+                required></textarea>
               <div class="text-right">
                 <button type="submit" class="btn btn-primary btn-style mt-4">Send Message</button>
               </div>
@@ -187,11 +201,14 @@
     </div>
   </section>
 
- 
+
 
   <!-- /contact1 -->
   <div class="map-iframe">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6329955748197!2d81.01851007558209!3d26.851622976683615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2fabafbd439%3A0xc82ef285fbdc8761!2sHeinemann%20Chauraha!5e0!3m2!1sen!2sin!4v1692603199981!5m2!1sen!2sin" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6329955748197!2d81.01851007558209!3d26.851622976683615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2fabafbd439%3A0xc82ef285fbdc8761!2sHeinemann%20Chauraha!5e0!3m2!1sen!2sin!4v1692603199981!5m2!1sen!2sin"
+      width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
   <!-- //contact block -->
   <!-- Footer -->
@@ -208,13 +225,16 @@
           <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
             <ul class="social m-0 p-0">
               <li>
-                <a href="https://www.facebook.com/kishanmishra.kis" target="_blank"><span class="fa fa-facebook-square"></span></a>
+                <a href="https://www.facebook.com/kishanmishra.kis" target="_blank"><span
+                    class="fa fa-facebook-square"></span></a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/kishan-mishra-3007/" target="_blank"><span class="fa fa-linkedin-square"></span></a>
+                <a href="https://www.linkedin.com/in/kishan-mishra-3007/" target="_blank"><span
+                    class="fa fa-linkedin-square"></span></a>
               </li>
               <li>
-                <a href="https://www.instagram.com/cut_it_kishan/" target="_blank"><span class="fa fa-instagram"></span></a>
+                <a href="https://www.instagram.com/cut_it_kishan/" target="_blank"><span
+                    class="fa fa-instagram"></span></a>
               </li>
             </ul>
           </div>
@@ -228,7 +248,7 @@
     </button>
     <script>
       // Show the "scroll to top" button when the user scrolls down 20px from the top
-      window.onscroll = function() {
+      window.onscroll = function () {
         scrollFunction();
       };
 
@@ -262,12 +282,12 @@
   <!-- /typig-text-->
   <script>
     // Disable right-click
-    document.addEventListener("contextmenu", function(e) {
+    document.addEventListener("contextmenu", function (e) {
       e.preventDefault();
     });
 
     // Disable Ctrl key
-    document.addEventListener("keydown", function(e) {
+    document.addEventListener("keydown", function (e) {
       if (e.ctrlKey) {
         e.preventDefault();
         e.stopPropagation();
@@ -276,7 +296,7 @@
     });
 
     // Disable F12 key
-    document.addEventListener("keydown", function(e) {
+    document.addEventListener("keydown", function (e) {
       if (e.key === "F12" || e.keyCode === 123) {
         e.preventDefault();
         e.stopPropagation();
@@ -324,7 +344,7 @@
       }
     }
 
-    document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+    document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
       if (textArray.length) setTimeout(type, newTextDelay + 250);
     });
   </script>
@@ -335,7 +355,7 @@
 
   <!-- script for services -->
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('.owl-two').owlCarousel({
         loop: true,
         margin: 30,
@@ -370,7 +390,7 @@
 
   <!-- script for tesimonials carousel slider -->
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $("#owl-demo1").owlCarousel({
         loop: true,
         margin: 20,
@@ -399,7 +419,7 @@
   <!-- video popup -->
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('.popup-with-zoom-anim').magnificPopup({
         type: 'inline',
 
@@ -445,8 +465,8 @@
 
   <!-- disable body scroll which navbar is in active -->
   <script>
-    $(function() {
-      $('.navbar-toggler').click(function() {
+    $(function () {
+      $('.navbar-toggler').click(function () {
         $('body').toggleClass('noscroll');
       })
     });
@@ -455,7 +475,7 @@
 
   <!--/MENU-JS-->
   <script>
-    $(window).on("scroll", function() {
+    $(window).on("scroll", function () {
       var scroll = $(window).scrollTop();
 
       if (scroll >= 80) {
@@ -466,14 +486,14 @@
     });
 
     //Main navigation Active Class Add Remove
-    $(".navbar-toggler").on("click", function() {
+    $(".navbar-toggler").on("click", function () {
       $("header").toggleClass("active");
     });
-    $(document).on("ready", function() {
+    $(document).on("ready", function () {
       if ($(window).width() > 991) {
         $("header").removeClass("active");
       }
-      $(window).on("resize", function() {
+      $(window).on("resize", function () {
         if ($(window).width() > 991) {
           $("header").removeClass("active");
         }

@@ -17,6 +17,15 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-starter.css" />
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5SKBH54W9R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-5SKBH54W9R');
+</script>
 
 <body>
   <!-- header -->
@@ -27,7 +36,9 @@
           <span class="fa fa-code"></span>
           K <b class="mainTitle">DevStack</b>
         </a>
-        <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
+          data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
           <span class="navbar-toggler-icon fa icon-close fa-times"></span>
         </button>
@@ -42,7 +53,7 @@
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="projects">Projects</a>
-            </li>   
+            </li>
             <li class="nav-item @@contact__active">
               <a class="nav-link" href="contact">Contact</a>
             </li>
@@ -204,24 +215,21 @@
               <h4 class="number">${(index + 1).toString().padStart(2, "0")}</h4>
               <h4>
                 <span class="title-shortened"><a>${title}</a></span>
-                ${
-                  isTitleShortened
-                    ? `<span class="title-full" style="display:none"><a>${project.title}</a></span>`
-                    : ""
-                }
+                ${isTitleShortened
+          ? `<span class="title-full" style="display:none"><a>${project.title}</a></span>`
+          : ""
+        }
               </h4>
               <p>
                 <span class="description-shortened">${description}</span>
-                ${
-                  isDescriptionShortened
-                    ? `<span class="description-full" style="display:none">${project.description}</span>`
-                    : ""
-                }
+                ${isDescriptionShortened
+          ? `<span class="description-full" style="display:none">${project.description}</span>`
+          : ""
+        }
               </p>
               <!--<p>Owner: ${project.owner}</p>-->
-              <a href="${
-                project.github
-              }" class="read" target="_blank">Read more</a>
+              <a href="${project.github
+        }" class="read" target="_blank">Read more</a>
             </div>
           </div>
         </div>
@@ -231,7 +239,7 @@
       const titleShortened = projectItem.querySelector(".title-shortened");
       const titleFull = projectItem.querySelector(".title-full");
       if (isTitleShortened) {
-        titleShortened.addEventListener("click", function() {
+        titleShortened.addEventListener("click", function () {
           titleShortened.style.display = "none";
           titleFull.style.display = "inline";
         });
@@ -242,7 +250,7 @@
       );
       const descriptionFull = projectItem.querySelector(".description-full");
       if (isDescriptionShortened) {
-        descriptionShortened.addEventListener("click", function() {
+        descriptionShortened.addEventListener("click", function () {
           descriptionShortened.style.display = "none";
           descriptionFull.style.display = "inline";
         });
@@ -252,13 +260,13 @@
     }
 
     function fadeInAndFlyIn(element, index) {
-      setTimeout(function() {
+      setTimeout(function () {
         element.style.opacity = 1;
         element.style.transform = "translateY(0)";
       }, index * 50);
     }
 
-    showMoreBtn.addEventListener("click", function() {
+    showMoreBtn.addEventListener("click", function () {
       startIndex += batchSize;
       showProjects(startIndex, batchSize);
     });
@@ -299,13 +307,16 @@
           <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
             <ul class="social m-0 p-0">
               <li>
-                <a href="https://www.facebook.com/kishanmishra.kis" target="_blank"><span class="fa fa-facebook-square"></span></a>
+                <a href="https://www.facebook.com/kishanmishra.kis" target="_blank"><span
+                    class="fa fa-facebook-square"></span></a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/kishan-mishra-3007/" target="_blank"><span class="fa fa-linkedin-square"></span></a>
+                <a href="https://www.linkedin.com/in/kishan-mishra-3007/" target="_blank"><span
+                    class="fa fa-linkedin-square"></span></a>
               </li>
               <li>
-                <a href="https://www.instagram.com/cut_it_kishan/" target="_blank"><span class="fa fa-instagram"></span></a>
+                <a href="https://www.instagram.com/cut_it_kishan/" target="_blank"><span
+                    class="fa fa-instagram"></span></a>
               </li>
             </ul>
           </div>
@@ -319,7 +330,7 @@
     </button>
     <script>
       // Show the "scroll to top" button when the user scrolls down 20px from the top
-      window.onscroll = function() {
+      window.onscroll = function () {
         scrollFunction();
       };
 
@@ -355,12 +366,12 @@
   <!-- /typig-text-->
   <script>
     // Disable right-click
-    document.addEventListener("contextmenu", function(e) {
+    document.addEventListener("contextmenu", function (e) {
       e.preventDefault();
     });
 
     // Disable Ctrl key
-    document.addEventListener("keydown", function(e) {
+    document.addEventListener("keydown", function (e) {
       if (e.ctrlKey) {
         e.preventDefault();
         e.stopPropagation();
@@ -369,7 +380,7 @@
     });
 
     // Disable F12 key
-    document.addEventListener("keydown", function(e) {
+    document.addEventListener("keydown", function (e) {
       if (e.key === "F12" || e.keyCode === 123) {
         e.preventDefault();
         e.stopPropagation();
@@ -422,7 +433,7 @@
       }
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       // On DOM Load initiate the effect
       if (textArray.length) setTimeout(type, newTextDelay + 250);
     });
@@ -434,7 +445,7 @@
 
   <!-- script for services -->
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $(".owl-two").owlCarousel({
         loop: true,
         margin: 30,
@@ -469,7 +480,7 @@
 
   <!-- script for tesimonials carousel slider -->
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $("#owl-demo1").owlCarousel({
         loop: true,
         margin: 20,
@@ -498,7 +509,7 @@
   <!-- video popup -->
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $(".popup-with-zoom-anim").magnificPopup({
         type: "inline",
 
@@ -544,8 +555,8 @@
 
   <!-- disable body scroll which navbar is in active -->
   <script>
-    $(function() {
-      $(".navbar-toggler").click(function() {
+    $(function () {
+      $(".navbar-toggler").click(function () {
         $("body").toggleClass("noscroll");
       });
     });
@@ -554,7 +565,7 @@
 
   <!--/MENU-JS-->
   <script>
-    $(window).on("scroll", function() {
+    $(window).on("scroll", function () {
       var scroll = $(window).scrollTop();
 
       if (scroll >= 80) {
@@ -565,14 +576,14 @@
     });
 
     //Main navigation Active Class Add Remove
-    $(".navbar-toggler").on("click", function() {
+    $(".navbar-toggler").on("click", function () {
       $("header").toggleClass("active");
     });
-    $(document).on("ready", function() {
+    $(document).on("ready", function () {
       if ($(window).width() > 991) {
         $("header").removeClass("active");
       }
-      $(window).on("resize", function() {
+      $(window).on("resize", function () {
         if ($(window).width() > 991) {
           $("header").removeClass("active");
         }

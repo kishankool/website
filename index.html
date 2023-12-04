@@ -1,942 +1,861 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <title>K DevStack</title>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/code.svg" />
+  <title>K DevStack</title>
 
-    <!-- google fonts -->
-    <link
-      href="//fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Favicon icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/code.svg" />
 
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="assets/css/style-starter.css" />
+  <!-- google fonts -->
+  <link href="//fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap" rel="stylesheet" />
 
-    
-  </head>
-  <body>
-  
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-starter.css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5SKBH54W9R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-    <!-- loader -->
-    <div class="loader-container">
-      <div class="spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+  gtag('config', 'G-5SKBH54W9R');
+</script>
+
+<body>
+
+
+  <!-- loader -->
+  <div class="loader-container">
+    <div class="spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- //loader -->
+  <script>
+    // Function to animate the loader fade-out and display the header section
+    function animateLoader() {
+      var loaderContainer = document.querySelector(".loader-container");
+
+      setTimeout(function () {
+        loaderContainer.style.animation = "fade-out 0.5s ease-out forwards";
+        loaderContainer.style.display = "none";
+      }, 250); // 0.1 seconds
+    }
+
+    // Call the animation functions when the page finishes loading
+    window.addEventListener("load", function () {
+      animateLoader();
+    });
+  </script>
+
+
+  <!-- header -->
+  <header id="site-header" class="fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg stroke">
+        <a class="navbar-brand animate-left" href="index">
+          <span class="fa fa-code"></span>
+          K <b class="mainTitle">DevStack</b>
+        </a>
+        <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
+          data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+          <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active animate-right">
+              <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item @@about__active animate-right">
+              <a class="nav-link" href="about">About</a>
+            </li>
+            <li class="nav-item @@project__active animate-right">
+              <a class="nav-link" href="projects">Projects</a>
+            </li>
+            <li class="nav-item @@contact__active animate-right">
+              <a class="nav-link" href="contact">Contact</a>
+            </li>
+            <li id="statsNavItem" class="nav-item @@stats__active" style="display: none">
+              <a class="nav-link" href="stats">Stats</a>
+            </li>
+            <li id="logoutNavItem" class="nav-item" style="display: none">
+              <a class="nav-link" href="#" onclick="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+
+        <script>
+          var email = localStorage.getItem("email");
+          var statsNavItem = document.getElementById("statsNavItem");
+          var logoutNavItem = document.getElementById("logoutNavItem");
+
+          if (email) {
+            // Email exists, unhide the list items for stats and logout
+            statsNavItem.style.display = "";
+            logoutNavItem.style.display = "";
+          } else {
+            // Email does not exist, hide the list items for stats and logout
+            statsNavItem.style.display = "none";
+            logoutNavItem.style.display = "none";
+          }
+
+          function logout() {
+            // Remove the email from localStorage
+            localStorage.removeItem("email");
+
+            // Perform any additional logout actions if needed
+
+            alert("Logout Successfully");
+
+            // Redirect the user to the desired page
+            window.location.href = "index"; // Replace "index" with the appropriate page URL
+          }
+        </script>
+
+        <!-- toggle switch for light and dark theme -->
+        <div class="mobile-position animate-right">
+          <nav class="navigation">
+            <div class="theme-switch-wrapper">
+              <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="mode-container">
+                  <i class="gg-sun"></i>
+                  <i class="gg-moon"></i>
+                </div>
+              </label>
+            </div>
+          </nav>
+        </div>
+        <!-- //toggle switch for light and dark theme -->
+      </nav>
+    </div>
+  </header>
+  <!-- //header -->
+
+  <!-- banner section -->
+  <section id="home" class="w3l-banner py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-sm-12 mt-lg-0 mt-4" data-aos="fade-right">
+          <span class="title-small animate-left">Hello</span>
+          <h1 class="mb-2 title animate-left">
+            <span>I'm</span> Kishan Mishra
+          </h1>
+          <h1 class="mb-4 title animate-left">
+            a <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+          </h1>
+          <p class="animate-left">
+            A highly <b>organized</b>, <b>innovative</b>, and
+            <b>goal-driven</b> undergraduate with
+            <b>exceptional communication</b>, <b>problem-solving</b>, and
+            <b>leadership abilities</b>, coupled with a <b>passion</b> for exploring
+            the vast realm of <code>Information Technology</code>.
+          </p>
+          <div class="mt-sm-5 mt-4 animate-left">
+            <a class="btn btn-primary btn-style mr-sm-2" href="projects">See Projects</a>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-8 col-sm-10 mt-lg-0 mt-4" data-aos="fade-left" id="image-page">
+          <div class="img-effect text-lg-center animate-right">
+            <img src="assets/images/photo.svg" alt="myphoto" class="img-fluid" />
+          </div>
+        </div>
       </div>
     </div>
-    <!-- //loader -->
-    <script>
-      // Function to animate the loader fade-out and display the header section
-      function animateLoader() {
-        var loaderContainer = document.querySelector(".loader-container");
+  </section>
+  <!-- //banner section -->
 
-        setTimeout(function () {
-          loaderContainer.style.animation = "fade-out 0.5s ease-out forwards";
-          loaderContainer.style.display = "none";
-        }, 250); // 0.1 seconds
-      }
+  <!-- home page about section -->
+  <section class="w3l-index3" id="about">
+    <div class="midd-w3 py-5">
+      <div class="container py-lg-5 py-md-3">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="position-relative">
+              <img src="assets/images/myphoto.JPG" alt="" class="radius-image img-fluid animate-left" />
+            </div>
+          </div>
+          <div class="col-lg-8 mt-lg-0 mt-5">
+            <h5 class="title-small mb-2 animate-right">About Me</h5>
+            <h3 class="title-big animate-right">Kishan Mishra</h3>
+            <p class="mt-4 animate-right">
+              I am a skilled <strong>Full Stack Developer</strong> with a
+              strong focus on <b>all round development</b>. Proficient in
+              <code>HTML</code>, <code>CSS</code>, <code>SCSS, </code><code>JavaScript</code>
+              ,<code>TypeScript</code>,
+              <code>React</code>, <code>React Native</code>, <code>Node.js</code>,
+              <code>Python</code>, <code>SQL</code>, <code>Angular</code>,
+              <code>Android development</code>, <code>NoSQL</code>, and <code>Tensorflow</code>. I create
+              visually stunning interfaces and seamless user experiences
+              across platforms. With expertise in front-end, back-end, and
+              mobile app development, I deliver dynamic applications. I am a
+              proactive problem solver, quick learner, and collaborative team
+              player. Passionate about staying updated with the latest
+              technologies and driving business success. Download my resume to
+              learn more.
+            </p>
+            <a href="KishanMishra_sde.pdf" download="KishanMishra_sde.pdf"
+              class="btn btn-style btn-primary mt-lg-5 mt-4 animate-right">
+              <b><i class="fa fa-cloud-download" aria-hidden="true"></i>
+                Download My Resume</b>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- //home page about section -->
 
-      // Call the animation functions when the page finishes loading
-      window.addEventListener("load", function () {
-        animateLoader();
-      });
-    </script>
+  <!-- home page second section -->
+  <section class="py-5 w3l-resume">
+    <div class="container py-lg-5 py-3">
+      <h5 class="title-small mb-2 animate-left">Professional Portfolio</h5>
+      <h3 class="title-big mb-4 animate-left">
+        Transforming Ideas into Reality
+      </h3>
+      <p class="animate-left">
+        As a highly skilled full stack developer, I have
+        been passionately pursuing my career since 2022. With a strong focus
+        on visual aesthetics and cutting-edge technologies, I have
+        consistently delivered captivating designs and seamless user
+        experiences. My portfolio showcases a diverse range of successful
+        projects, demonstrating my expertise development. I
+        invite you to explore my resume to gain a comprehensive understanding
+        of my professional journey. Let's collaborate and bring your ideas to
+        life!
+      </p>
+      <div class="mt-5 animate-left">
+        <a href="https://www.linkedin.com/in/kishan-mishra-3007/" class="btn btn-style btn-primary"
+          target="_blank"><b>Check Out <i class="fa fa-linkedin-square" aria-hidden="true"></i></b>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- //home page second section -->
 
+  <!-- home page services section -->
+  <section class="w3l-services">
+    <div class="blog py-5" id="services">
+      <div class="container py-lg-5">
+        <h5 class="title-small text-center animate-left">Services</h5>
+        <h3 class="title-big text-center mb-sm-5 mb-4 animate-left">
+          Turning Concepts into Tangible Solutions
+        </h3>
+        <div class="row">
+          <div class="col-md-12 mx-auto pr-2">
+            <div class="owl-two owl-carousel owl-theme">
 
-    <!-- header -->
-    <header id="site-header" class="fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg stroke">
-          <a class="navbar-brand animate-left" href="index">
-            <span class="fa fa-code"></span>
-            K <b class="mainTitle">DevStack</b>
-          </a>
-          <button
-            class="navbar-toggler collapsed bg-gradient"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-            <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-          </button>
+              <div class="item animate-right">
+                <div class="card">
+                  <div class="box-wrap">
+                    <div class="icon">
+                      <span class="fa fa-laptop"></span>
+                    </div>
+                    <h4 class="number">02</h4>
+                    <h4><a href="">Web Development</a></h4>
+                    <p>
+                      Translating designs into dynamic and interactive
+                      websites, I ensure seamless functionality and
+                      exceptional user experience.
+                    </p>
+                    <a href="" class="read">Read more</a>
+                  </div>
+                </div>
+              </div>
 
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active animate-right">
-                <a class="nav-link" href="index"
-                  >Home <span class="sr-only">(current)</span></a
-                >
+              <div class="item animate-right">
+                <div class="card">
+                  <div class="box-wrap">
+                    <div class="icon">
+                      <span class="fa fa-area-chart"></span>
+                    </div>
+                    <h4 class="number">03</h4>
+                    <h4><a href="">Research & Analysis</a></h4>
+                    <p>
+                      Uncovering valuable insights through meticulous research
+                      and analysis, I empower organizations to optimize
+                      strategies and enhance performance.
+                    </p>
+                    <a href="" class="read">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item animate-right">
+                <div class="card">
+                  <div class="box-wrap">
+                    <div class="icon">
+                      <span class="fa fa-cogs"></span>
+                    </div>
+                    <h4 class="number">04</h4>
+                    <h4><a href="">Data Science</a></h4>
+                    <p>
+                      Unleashing the power of data, I employ advanced
+                      techniques to extract valuable insights and drive
+                      informed decision-making.
+                    </p>
+                    <a href="" class="read">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item animate-right">
+                <div class="card">
+                  <div class="box-wrap">
+                    <div class="icon">
+                      <span class="fa fa-android"></span>
+                    </div>
+                    <h4 class="number">05</h4>
+                    <h4><a href="">App Development</a></h4>
+                    <p>
+                      Embracing cutting-edge technologies, I craft customized
+                      mobile apps that drive business growth and digital
+                      transformation.
+                    </p>
+                    <a href="" class="read">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item animate-right">
+                <div class="card">
+                  <div class="box-wrap">
+                    <div class="icon">
+                      <span class="fa fa-cubes"></span>
+                    </div>
+                    <h4 class="number">06</h4>
+                    <h4><a href="">Team Management</a></h4>
+                    <p>
+                      Leading high-performing teams, I foster innovation and
+                      drive projects through effective collaboration and
+                      strategic management.
+                    </p>
+                    <a href="" class="read">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- //home page services section -->
+
+  <!-- stats -->
+  <section class="w3l-stats py-lg-5 py-4" id="stats">
+    <div class="gallery-inner container py-md-5 py-4">
+      <h5 class="title-small text-center animate-left">
+        Impressive Track Record
+      </h5>
+      <h3 class="title-big text-center mb-sm-5 mb-4 animate-left">
+        Demonstrating Excellence
+      </h3>
+      <div class="row stats-con animate-right">
+        <div class="col-sm-3 col-6 stats_info counter_grid">
+          <span class="fa fa-code"></span>
+          <p class="counter">50</p>
+          <h4>Completed Projects</h4>
+        </div>
+        <div class="col-sm-3 col-6 stats_info counter_grid1">
+          <span class="fa fa-hourglass-end"></span>
+          <p class="counter">10</p>
+          <h4>Projects in Progress</h4>
+        </div>
+        <div class="col-sm-3 col-6 stats_info counter_grid mt-sm-0 mt-5">
+          <span class="fa fa-gift"></span>
+          <p class="counter">12</p>
+          <h4>Awards Received</h4>
+        </div>
+        <div class="col-sm-3 col-6 stats_info counter_grid2 mt-sm-0 mt-5">
+          <span class="fa fa-smile-o"></span>
+          <p class="counter">35</p>
+          <h4>Satisfied Clients</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- //stats -->
+
+  <!-- testimonials -->
+  <section class="w3l-clients" id="clients">
+    <!-- /grids -->
+    <div class="cusrtomer-layout py-5">
+      <div class="container py-lg-5 py-md-4">
+        <div class="heading text-center mx-auto">
+          <h6 class="title-small text-center animate-left">Testimonials</h6>
+          <h3 class="title-big mb-md-5 mb-4 animate-left">
+            What my clients think about Me
+          </h3>
+        </div>
+        <!-- /grids -->
+        <div class="testimonial-width animate-right">
+          <div id="owl-demo1" class="owl-carousel owl-theme mb-4">
+            <div class="item">
+              <div class="testimonial-content">
+                <div class="testimonial">
+                  <blockquote>
+                    <q>His professionalism and expertise are unparalleled. He
+                      consistently delivers exceptional results and exceeds
+                      expectations. Highly recommended!</q>
+                  </blockquote>
+                  <div class="testi-des">
+                    <div class="test-img">
+                      <img src="assets/images/team1.jpg" class="img-fluid" alt="client-img" />
+                    </div>
+                    <div class="peopl align-self">
+                      <h3>John wilson</h3>
+                      <p class="indentity">Seattle, Washington</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimonial-content">
+                <div class="testimonial">
+                  <blockquote>
+                    <q>Working with him has been an absolute pleasure. He has
+                      exceptional problem-solving skills and consistently
+                      delivers top-notch solutions. Highly recommended!</q>
+                  </blockquote>
+                  <div class="testi-des">
+                    <div class="test-img">
+                      <img src="assets/images/team3.jpg" class="img-fluid" alt="client-img" />
+                    </div>
+                    <div class="peopl align-self">
+                      <h3>Julia sakura</h3>
+                      <p class="indentity">Seattle, Washington</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimonial-content">
+                <div class="testimonial">
+                  <blockquote>
+                    <q>His attention to detail and consistently delivers
+                      high-quality work on time and within budget. Highly
+                      recommended!</q>
+                  </blockquote>
+                  <div class="testi-des">
+                    <div class="test-img">
+                      <img src="assets/images/team2.jpg" class="img-fluid" alt="client-img" />
+                    </div>
+                    <div class="peopl align-self">
+                      <h3>Roy Linderson</h3>
+                      <p class="indentity">Seattle, Washington</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimonial-content">
+                <div class="testimonial">
+                  <blockquote>
+                    <q>He consistently delivers outstanding results and goes
+                      above and beyond to ensure client satisfaction. Highly
+                      recommended!</q>
+                  </blockquote>
+                  <div class="testi-des">
+                    <div class="test-img">
+                      <img src="assets/images/mike.jpg" class="img-fluid" alt="client-img" />
+                    </div>
+                    <div class="peopl align-self">
+                      <h3>Mike Thyson</h3>
+                      <p class="indentity">Seattle, Washington</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimonial-content">
+                <div class="testimonial">
+                  <blockquote>
+                    <q>His professionalism and technical expertise are
+                      unmatched. He consistently delivers exceptional results
+                      and exceeds expectations. Highly recommended!</q>
+                  </blockquote>
+                  <div class="testi-des">
+                    <div class="test-img">
+                      <img src="assets/images/laura.jpg" class="img-fluid" alt="client-img" />
+                    </div>
+                    <div class="peopl align-self">
+                      <h3>Laura gill</h3>
+                      <p class="indentity">Seattle, Washington</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimonial-content">
+                <div class="testimonial">
+                  <blockquote>
+                    <q>He possesses exceptional problem-solving skills and
+                      consistently delivers top-notch solutions. Highly
+                      recommended!</q>
+                  </blockquote>
+                  <div class="testi-des">
+                    <div class="test-img">
+                      <img src="assets/images/smith.jpg" class="img-fluid" alt="client-img" />
+                    </div>
+                    <div class="peopl align-self">
+                      <h3>Smith Johnson</h3>
+                      <p class="indentity">Seattle, Washington</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /grids -->
+    </div>
+    <!-- //grids -->
+  </section>
+  <!-- //testimonials -->
+
+  <!-- home page video popup section -->
+  <section class="w3l-index5" id="about">
+    <div class="new-block py-5">
+      <div class="container py-lg-5">
+        <div class="middle-section text-center">
+          <div class="section-width">
+            <h6 class="title-small animate-left">Let's Connect</h6>
+            <h3 class="title-big animate-left">
+              Elevate your business with captivating innovation and
+              professional expertise.
+            </h3>
+            <p class="mt-3 animate-left">
+              Experience the difference with my transformative approach and
+              unwavering commitment to excellence. From striking websites to
+              cutting-edge digital solutions, I deliver exceptional results
+              that surpass expectations. Let's collaborate to bring your
+              vision to life, captivating your audience and propelling your
+              business forward.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- //home page video popup section -->
+
+  <!-- freelance hire me -->
+  <section class="w3l-grid-quote text-center py-5">
+    <div class="container py-3">
+      <h6 class="title-small">Let's Collaborate</h6>
+      <h3 class="title-big mb-md-5 mb-4">
+        Ready to Start a Project? Hire Me.
+      </h3>
+      <a href="contact" class="btn btn-style btn-primary mr-2">Hire Me </a>
+      <a href="contact" class="btn btn-style btn-outline-primary">Get in Touch</a>
+    </div>
+  </section>
+  <!-- //freelance hire me -->
+
+  <!-- Footer -->
+  <section class="w3l-footer py-sm-5 py-4">
+    <div class="container">
+      <div class="footer-content">
+        <div class="row">
+          <div class="col-lg-8 footer-left">
+            <p class="m-0">
+              &copy; 2023 K <b>DevStack</b>. Developed by
+              <a href="index">Kishan Mishra</a>
+            </p>
+          </div>
+          <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
+            <ul class="social m-0 p-0">
+              <li>
+                <a href="https://www.facebook.com/kishanmishra.kis" target="_blank"><span
+                    class="fa fa-facebook-square"></span></a>
               </li>
-              <li class="nav-item @@about__active animate-right">
-                <a class="nav-link" href="about">About</a>
+              <li>
+                <a href="https://www.linkedin.com/in/kishan-mishra-3007/" target="_blank"><span
+                    class="fa fa-linkedin-square"></span></a>
               </li>
-              <li class="nav-item @@project__active animate-right">
-                <a class="nav-link" href="projects">Projects</a>
-              </li>
-              <li class="nav-item @@contact__active animate-right">
-                <a class="nav-link" href="contact">Contact</a>
-              </li>
-              <li
-                id="statsNavItem"
-                class="nav-item @@stats__active"
-                style="display: none"
-              >
-                <a class="nav-link" href="stats">Stats</a>
-              </li>
-              <li id="logoutNavItem" class="nav-item" style="display: none">
-                <a class="nav-link" href="#" onclick="logout()">Logout</a>
+              <li>
+                <a href="https://www.instagram.com/cu/" target="_blank"><span class="fa fa-instagram"></span></a>
               </li>
             </ul>
           </div>
-
-          <script>
-            var email = localStorage.getItem("email");
-            var statsNavItem = document.getElementById("statsNavItem");
-            var logoutNavItem = document.getElementById("logoutNavItem");
-
-            if (email) {
-              // Email exists, unhide the list items for stats and logout
-              statsNavItem.style.display = "";
-              logoutNavItem.style.display = "";
-            } else {
-              // Email does not exist, hide the list items for stats and logout
-              statsNavItem.style.display = "none";
-              logoutNavItem.style.display = "none";
-            }
-
-            function logout() {
-              // Remove the email from localStorage
-              localStorage.removeItem("email");
-
-              // Perform any additional logout actions if needed
-
-              alert("Logout Successfully");
-
-              // Redirect the user to the desired page
-              window.location.href = "index"; // Replace "index" with the appropriate page URL
-            }
-          </script>
-
-          <!-- toggle switch for light and dark theme -->
-          <div class="mobile-position animate-right">
-            <nav class="navigation">
-              <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                  <input type="checkbox" id="checkbox" />
-                  <div class="mode-container">
-                    <i class="gg-sun"></i>
-                    <i class="gg-moon"></i>
-                  </div>
-                </label>
-              </div>
-            </nav>
-          </div>
-          <!-- //toggle switch for light and dark theme -->
-        </nav>
-      </div>
-    </header>
-    <!-- //header -->
-
-    <!-- banner section -->
-    <section id="home" class="w3l-banner py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-sm-12 mt-lg-0 mt-4" data-aos="fade-right">
-            <span class="title-small animate-left">Hello</span>
-            <h1 class="mb-2 title animate-left">
-              <span>I'm</span> Kishan Mishra
-            </h1>
-            <h1 class="mb-4 title animate-left">
-              a <span class="typed-text"></span
-              ><span class="cursor">&nbsp;</span>
-            </h1>
-            <p class="animate-left">
-              A highly <b>organized</b>, <b>innovative</b>, and
-              <b>goal-driven</b> undergraduate with
-              <b>exceptional communication</b>, <b>problem-solving</b>, and
-              <b>leadership abilities</b>, coupled with a <b>passion</b> for exploring
-              the vast realm of <code>Information Technology</code>.
-            </p>
-            <div class="mt-sm-5 mt-4 animate-left">
-              <a class="btn btn-primary btn-style mr-sm-2" href="projects"
-                >See Projects</a
-              >
-            </div>
-          </div>
-          <div
-            class="col-lg-6 col-md-8 col-sm-10 mt-lg-0 mt-4"
-            data-aos="fade-left"
-            id="image-page"
-          >
-            <div class="img-effect text-lg-center animate-right">
-              <img
-                src="assets/images/photo.svg"
-                alt="myphoto"
-                class="img-fluid"
-              />
-            </div>
-          </div>
         </div>
       </div>
-    </section>
-    <!-- //banner section -->
+    </div>
 
-    <!-- home page about section -->
-    <section class="w3l-index3" id="about">
-      <div class="midd-w3 py-5">
-        <div class="container py-lg-5 py-md-3">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="position-relative">
-                <img
-                  src="assets/images/myphoto.JPG"
-                  alt=""
-                  class="radius-image img-fluid animate-left"
-                />
-              </div>
-            </div>
-            <div class="col-lg-8 mt-lg-0 mt-5">
-              <h5 class="title-small mb-2 animate-right">About Me</h5>
-              <h3 class="title-big animate-right">Kishan Mishra</h3>
-              <p class="mt-4 animate-right">
-                I am a skilled <strong>Full Stack Developer</strong> with a
-                strong focus on <b>all round development</b>. Proficient in
-                <code>HTML</code>, <code>CSS</code>, <code>SCSS, </code><code>JavaScript</code>
-                ,<code>TypeScript</code>,
-                <code>React</code>, <code>React Native</code>, <code>Node.js</code>,
-                <code>Python</code>, <code>SQL</code>, <code>Angular</code>,
-                <code>Android development</code>, <code>NoSQL</code>, and <code>Tensorflow</code>. I create
-                visually stunning interfaces and seamless user experiences
-                across platforms. With expertise in front-end, back-end, and
-                mobile app development, I deliver dynamic applications. I am a
-                proactive problem solver, quick learner, and collaborative team
-                player. Passionate about staying updated with the latest
-                technologies and driving business success. Download my resume to
-                learn more.
-              </p>
-              <a
-                href="KishanMishra_sde.pdf"
-                download="KishanMishra_sde.pdf"
-                class="btn btn-style btn-primary mt-lg-5 mt-4 animate-right"
-              >
-                <b
-                  ><i class="fa fa-cloud-download" aria-hidden="true"></i>
-                  Download My Resume</b
-                >
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- //home page about section -->
-
-    <!-- home page second section -->
-    <section class="py-5 w3l-resume">
-      <div class="container py-lg-5 py-3">
-        <h5 class="title-small mb-2 animate-left">Professional Portfolio</h5>
-        <h3 class="title-big mb-4 animate-left">
-          Transforming Ideas into Reality
-        </h3>
-        <p class="animate-left">
-          As a highly skilled full stack developer, I have
-          been passionately pursuing my career since 2022. With a strong focus
-          on visual aesthetics and cutting-edge technologies, I have
-          consistently delivered captivating designs and seamless user
-          experiences. My portfolio showcases a diverse range of successful
-          projects, demonstrating my expertise development. I
-          invite you to explore my resume to gain a comprehensive understanding
-          of my professional journey. Let's collaborate and bring your ideas to
-          life!
-        </p>
-        <div class="mt-5 animate-left">
-          <a
-            href="https://www.linkedin.com/in/kishan-mishra-3007/"
-            class="btn btn-style btn-primary"
-            target="_blank"
-            ><b
-              >Check Out <i class="fa fa-linkedin-square" aria-hidden="true"></i
-            ></b>
-          </a>
-        </div>
-      </div>
-    </section>
-    <!-- //home page second section -->
-
-    <!-- home page services section -->
-    <section class="w3l-services">
-      <div class="blog py-5" id="services">
-        <div class="container py-lg-5">
-          <h5 class="title-small text-center animate-left">Services</h5>
-          <h3 class="title-big text-center mb-sm-5 mb-4 animate-left">
-            Turning Concepts into Tangible Solutions
-          </h3>
-          <div class="row">
-            <div class="col-md-12 mx-auto pr-2">
-              <div class="owl-two owl-carousel owl-theme">
-
-                <div class="item animate-right">
-                  <div class="card">
-                    <div class="box-wrap">
-                      <div class="icon">
-                        <span class="fa fa-laptop"></span>
-                      </div>
-                      <h4 class="number">02</h4>
-                      <h4><a href="">Web Development</a></h4>
-                      <p>
-                        Translating designs into dynamic and interactive
-                        websites, I ensure seamless functionality and
-                        exceptional user experience.
-                      </p>
-                      <a href="" class="read">Read more</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item animate-right">
-                  <div class="card">
-                    <div class="box-wrap">
-                      <div class="icon">
-                        <span class="fa fa-area-chart"></span>
-                      </div>
-                      <h4 class="number">03</h4>
-                      <h4><a href="">Research & Analysis</a></h4>
-                      <p>
-                        Uncovering valuable insights through meticulous research
-                        and analysis, I empower organizations to optimize
-                        strategies and enhance performance.
-                      </p>
-                      <a href="" class="read">Read more</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item animate-right">
-                  <div class="card">
-                    <div class="box-wrap">
-                      <div class="icon">
-                        <span class="fa fa-cogs"></span>
-                      </div>
-                      <h4 class="number">04</h4>
-                      <h4><a href="">Data Science</a></h4>
-                      <p>
-                        Unleashing the power of data, I employ advanced
-                        techniques to extract valuable insights and drive
-                        informed decision-making.
-                      </p>
-                      <a href="" class="read">Read more</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item animate-right">
-                  <div class="card">
-                    <div class="box-wrap">
-                      <div class="icon">
-                        <span class="fa fa-android"></span>
-                      </div>
-                      <h4 class="number">05</h4>
-                      <h4><a href="">App Development</a></h4>
-                      <p>
-                        Embracing cutting-edge technologies, I craft customized
-                        mobile apps that drive business growth and digital
-                        transformation.
-                      </p>
-                      <a href="" class="read">Read more</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="item animate-right">
-                  <div class="card">
-                    <div class="box-wrap">
-                      <div class="icon">
-                        <span class="fa fa-cubes"></span>
-                      </div>
-                      <h4 class="number">06</h4>
-                      <h4><a href="">Team Management</a></h4>
-                      <p>
-                        Leading high-performing teams, I foster innovation and
-                        drive projects through effective collaboration and
-                        strategic management.
-                      </p>
-                      <a href="" class="read">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- //home page services section -->
-
-    <!-- stats -->
-    <section class="w3l-stats py-lg-5 py-4" id="stats">
-      <div class="gallery-inner container py-md-5 py-4">
-        <h5 class="title-small text-center animate-left">
-          Impressive Track Record
-        </h5>
-        <h3 class="title-big text-center mb-sm-5 mb-4 animate-left">
-          Demonstrating Excellence
-        </h3>
-        <div class="row stats-con animate-right">
-          <div class="col-sm-3 col-6 stats_info counter_grid">
-            <span class="fa fa-code"></span>
-            <p class="counter">50</p>
-            <h4>Completed Projects</h4>
-          </div>
-          <div class="col-sm-3 col-6 stats_info counter_grid1">
-            <span class="fa fa-hourglass-end"></span>
-            <p class="counter">10</p>
-            <h4>Projects in Progress</h4>
-          </div>
-          <div class="col-sm-3 col-6 stats_info counter_grid mt-sm-0 mt-5">
-            <span class="fa fa-gift"></span>
-            <p class="counter">12</p>
-            <h4>Awards Received</h4>
-          </div>
-          <div class="col-sm-3 col-6 stats_info counter_grid2 mt-sm-0 mt-5">
-            <span class="fa fa-smile-o"></span>
-            <p class="counter">35</p>
-            <h4>Satisfied Clients</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- //stats -->
-
-    <!-- testimonials -->
-    <section class="w3l-clients" id="clients">
-      <!-- /grids -->
-      <div class="cusrtomer-layout py-5">
-        <div class="container py-lg-5 py-md-4">
-          <div class="heading text-center mx-auto">
-            <h6 class="title-small text-center animate-left">Testimonials</h6>
-            <h3 class="title-big mb-md-5 mb-4 animate-left">
-              What my clients think about Me
-            </h3>
-          </div>
-          <!-- /grids -->
-          <div class="testimonial-width animate-right">
-            <div id="owl-demo1" class="owl-carousel owl-theme mb-4">
-              <div class="item">
-                <div class="testimonial-content">
-                  <div class="testimonial">
-                    <blockquote>
-                      <q
-                        >His professionalism and expertise are unparalleled. He
-                        consistently delivers exceptional results and exceeds
-                        expectations. Highly recommended!</q
-                      >
-                    </blockquote>
-                    <div class="testi-des">
-                      <div class="test-img">
-                        <img
-                          src="assets/images/team1.jpg"
-                          class="img-fluid"
-                          alt="client-img"
-                        />
-                      </div>
-                      <div class="peopl align-self">
-                        <h3>John wilson</h3>
-                        <p class="indentity">Seattle, Washington</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-content">
-                  <div class="testimonial">
-                    <blockquote>
-                      <q
-                        >Working with him has been an absolute pleasure. He has
-                        exceptional problem-solving skills and consistently
-                        delivers top-notch solutions. Highly recommended!</q
-                      >
-                    </blockquote>
-                    <div class="testi-des">
-                      <div class="test-img">
-                        <img
-                          src="assets/images/team3.jpg"
-                          class="img-fluid"
-                          alt="client-img"
-                        />
-                      </div>
-                      <div class="peopl align-self">
-                        <h3>Julia sakura</h3>
-                        <p class="indentity">Seattle, Washington</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-content">
-                  <div class="testimonial">
-                    <blockquote>
-                      <q
-                        >His attention to detail and consistently delivers
-                        high-quality work on time and within budget. Highly
-                        recommended!</q
-                      >
-                    </blockquote>
-                    <div class="testi-des">
-                      <div class="test-img">
-                        <img
-                          src="assets/images/team2.jpg"
-                          class="img-fluid"
-                          alt="client-img"
-                        />
-                      </div>
-                      <div class="peopl align-self">
-                        <h3>Roy Linderson</h3>
-                        <p class="indentity">Seattle, Washington</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-content">
-                  <div class="testimonial">
-                    <blockquote>
-                      <q
-                        >He consistently delivers outstanding results and goes
-                        above and beyond to ensure client satisfaction. Highly
-                        recommended!</q
-                      >
-                    </blockquote>
-                    <div class="testi-des">
-                      <div class="test-img">
-                        <img
-                          src="assets/images/mike.jpg"
-                          class="img-fluid"
-                          alt="client-img"
-                        />
-                      </div>
-                      <div class="peopl align-self">
-                        <h3>Mike Thyson</h3>
-                        <p class="indentity">Seattle, Washington</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-content">
-                  <div class="testimonial">
-                    <blockquote>
-                      <q
-                        >His professionalism and technical expertise are
-                        unmatched. He consistently delivers exceptional results
-                        and exceeds expectations. Highly recommended!</q
-                      >
-                    </blockquote>
-                    <div class="testi-des">
-                      <div class="test-img">
-                        <img
-                          src="assets/images/laura.jpg"
-                          class="img-fluid"
-                          alt="client-img"
-                        />
-                      </div>
-                      <div class="peopl align-self">
-                        <h3>Laura gill</h3>
-                        <p class="indentity">Seattle, Washington</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-content">
-                  <div class="testimonial">
-                    <blockquote>
-                      <q
-                        >He possesses exceptional problem-solving skills and
-                        consistently delivers top-notch solutions. Highly
-                        recommended!</q
-                      >
-                    </blockquote>
-                    <div class="testi-des">
-                      <div class="test-img">
-                        <img
-                          src="assets/images/smith.jpg"
-                          class="img-fluid"
-                          alt="client-img"
-                        />
-                      </div>
-                      <div class="peopl align-self">
-                        <h3>Smith Johnson</h3>
-                        <p class="indentity">Seattle, Washington</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /grids -->
-      </div>
-      <!-- //grids -->
-    </section>
-    <!-- //testimonials -->
-
-    <!-- home page video popup section -->
-    <section class="w3l-index5" id="about">
-      <div class="new-block py-5">
-        <div class="container py-lg-5">
-          <div class="middle-section text-center">
-            <div class="section-width">
-              <h6 class="title-small animate-left">Let's Connect</h6>
-              <h3 class="title-big animate-left">
-                Elevate your business with captivating innovation and
-                professional expertise.
-              </h3>
-              <p class="mt-3 animate-left">
-                Experience the difference with my transformative approach and
-                unwavering commitment to excellence. From striking websites to
-                cutting-edge digital solutions, I deliver exceptional results
-                that surpass expectations. Let's collaborate to bring your
-                vision to life, captivating your audience and propelling your
-                business forward.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- //home page video popup section -->
-
-    <!-- freelance hire me -->
-    <section class="w3l-grid-quote text-center py-5">
-      <div class="container py-3">
-        <h6 class="title-small">Let's Collaborate</h6>
-        <h3 class="title-big mb-md-5 mb-4">
-          Ready to Start a Project? Hire Me.
-        </h3>
-        <a href="contact" class="btn btn-style btn-primary mr-2">Hire Me </a>
-        <a href="contact" class="btn btn-style btn-outline-primary"
-          >Get in Touch</a
-        >
-      </div>
-    </section>
-    <!-- //freelance hire me -->
-
-    <!-- Footer -->
-    <section class="w3l-footer py-sm-5 py-4">
-      <div class="container">
-        <div class="footer-content">
-          <div class="row">
-            <div class="col-lg-8 footer-left">
-              <p class="m-0">
-                &copy; 2023 K <b>DevStack</b>. Developed by
-                <a href="index">Kishan Mishra</a>
-              </p>
-            </div>
-            <div
-              class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3"
-            >
-              <ul class="social m-0 p-0">
-                <li>
-                  <a href="https://www.facebook.com/kishanmishra.kis" target="_blank"
-                    ><span class="fa fa-facebook-square"></span
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/kishan-mishra-3007/"
-                    target="_blank"
-                    ><span class="fa fa-linkedin-square"></span
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/cu/"
-                    target="_blank"
-                    ><span class="fa fa-instagram"></span
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scroll to top button -->
-      <button onclick="topFunction()" id="movetop" title="Go to top">
-        <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
-      </button>
-      <script>
-        // Show the "scroll to top" button when the user scrolls down 20px from the top
-        window.onscroll = function () {
-          scrollFunction();
-        };
-
-        function scrollFunction() {
-          if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-          ) {
-            document.getElementById("movetop").style.display = "block";
-          } else {
-            document.getElementById("movetop").style.display = "none";
-          }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-      </script>
-      <!-- /Scroll to top button -->
-    </section>
-    <!-- //Footer -->
-
-    <!-- all js scripts and files here -->
-
-    <script src="assets/js/theme-change.js"></script>
-    <!-- theme switch js (light and dark)-->
-
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <!-- default jQuery -->
-
-    <!-- /typig-text-->
+    <!-- Scroll to top button -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+      <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+    </button>
     <script>
-      // Check if the page is being inspected
+      // Show the "scroll to top" button when the user scrolls down 20px from the top
+      window.onscroll = function () {
+        scrollFunction();
+      };
 
-      const typedTextSpan = document.querySelector(".typed-text");
-      const cursorSpan = document.querySelector(".cursor");
-
-      const textArray = [
-        "Full Stack Developer",
-        "Freelancer",
-        "QA",
-        "Data Analyst",
-        "Scrum Master",
-        "AI Developer",
-        "ML Developer",
-      ];
-      const typingDelay = 200;
-      const erasingDelay = 10;
-      const newTextDelay = 100; // Delay between current and next text
-      let textArrayIndex = 0;
-      let charIndex = 0;
-
-      function type() {
-        if (charIndex < textArray[textArrayIndex].length) {
-          if (!cursorSpan.classList.contains("typing"))
-            cursorSpan.classList.add("typing");
-          typedTextSpan.textContent +=
-            textArray[textArrayIndex].charAt(charIndex);
-          charIndex++;
-          setTimeout(type, typingDelay);
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("movetop").style.display = "block";
         } else {
-          cursorSpan.classList.remove("typing");
-          setTimeout(erase, newTextDelay);
+          document.getElementById("movetop").style.display = "none";
         }
       }
 
-      function erase() {
-        if (charIndex > 0) {
-          // add class 'typing' if there's none
-          if (!cursorSpan.classList.contains("typing")) {
-            cursorSpan.classList.add("typing");
-          }
-          typedTextSpan.textContent = textArray[textArrayIndex].substring(0, 0);
-          charIndex--;
-          setTimeout(erase, erasingDelay);
-        } else {
-          cursorSpan.classList.remove("typing");
-          textArrayIndex++;
-          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-          setTimeout(type, typingDelay);
-        }
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // On DOM Load initiate the effect
-        if (textArray.length) setTimeout(type, newTextDelay + 250);
-      });
     </script>
-    <!-- //typig-text-->
+    <!-- /Scroll to top button -->
+  </section>
+  <!-- //Footer -->
 
-    <!-- services owlcarousel -->
-    <script src="assets/js/owl.carousel.js"></script>
+  <!-- all js scripts and files here -->
 
-    <!-- script for services -->
-    <script>
-      $(document).ready(function () {
-        $(".owl-two").owlCarousel({
-          loop: true,
-          margin: 30,
-          nav: false,
-          responsiveClass: true,
-          autoplay: false,
-          autoplayTimeout: 5000,
-          autoplaySpeed: 1000,
-          autoplayHoverPause: false,
-          responsive: {
-            0: {
-              items: 1,
-              nav: false,
-            },
-            480: {
-              items: 1,
-              nav: false,
-            },
-            700: {
-              items: 1,
-              nav: false,
-            },
-            1090: {
-              items: 3,
-              nav: false,
-            },
-          },
-        });
-      });
-    </script>
-    <!-- //script for services -->
+  <script src="assets/js/theme-change.js"></script>
+  <!-- theme switch js (light and dark)-->
 
-    <!-- script for tesimonials carousel slider -->
-    <script>
-      $(document).ready(function () {
-        $("#owl-demo1").owlCarousel({
-          loop: true,
-          margin: 20,
-          nav: false,
-          responsiveClass: true,
-          responsive: {
-            0: {
-              items: 1,
-              nav: false,
-            },
-            736: {
-              items: 1,
-              nav: false,
-            },
-            1000: {
-              items: 2,
-              nav: false,
-              loop: false,
-            },
-          },
-        });
-      });
-    </script>
-    <!-- //script for tesimonials carousel slider -->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <!-- default jQuery -->
 
-    <!-- video popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".popup-with-zoom-anim").magnificPopup({
-          type: "inline",
+  <!-- /typig-text-->
+  <script>
+    // Check if the page is being inspected
 
-          fixedContentPos: false,
-          fixedBgPos: true,
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
 
-          overflowY: "auto",
+    const textArray = [
+      "Full Stack Developer",
+      "Freelancer",
+      "QA",
+      "Data Analyst",
+      "Scrum Master",
+      "AI Developer",
+      "ML Developer",
+    ];
+    const typingDelay = 200;
+    const erasingDelay = 10;
+    const newTextDelay = 100; // Delay between current and next text
+    let textArrayIndex = 0;
+    let charIndex = 0;
 
-          closeBtnInside: true,
-          preloader: false,
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        if (!cursorSpan.classList.contains("typing"))
+          cursorSpan.classList.add("typing");
+        typedTextSpan.textContent +=
+          textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        cursorSpan.classList.remove("typing");
+        setTimeout(erase, newTextDelay);
+      }
+    }
 
-          midClick: true,
-          removalDelay: 300,
-          mainClass: "my-mfp-zoom-in",
-        });
-
-        $(".popup-with-move-anim").magnificPopup({
-          type: "inline",
-
-          fixedContentPos: false,
-          fixedBgPos: true,
-
-          overflowY: "auto",
-
-          closeBtnInside: true,
-          preloader: false,
-
-          midClick: true,
-          removalDelay: 300,
-          mainClass: "my-mfp-slide-bottom",
-        });
-      });
-    </script>
-    <!-- //video popup -->
-
-    <!-- stats number counter-->
-    <script src="assets/js/jquery.waypoints.min.js"></script>
-    <script src="assets/js/jquery.countup.js"></script>
-    <script>
-      $(".counter").countUp();
-    </script>
-    <!-- //stats number counter -->
-
-    <!-- disable body scroll which navbar is in active -->
-    <script>
-      $(function () {
-        $(".navbar-toggler").click(function () {
-          $("body").toggleClass("noscroll");
-        });
-      });
-    </script>
-    <!-- disable body scroll which navbar is in active -->
-
-    <!--/MENU-JS-->
-    <script>
-      $(window).on("scroll", function () {
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= 80) {
-          $("#site-header").addClass("nav-fixed");
-        } else {
-          $("#site-header").removeClass("nav-fixed");
+    function erase() {
+      if (charIndex > 0) {
+        // add class 'typing' if there's none
+        if (!cursorSpan.classList.contains("typing")) {
+          cursorSpan.classList.add("typing");
         }
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, 0);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        cursorSpan.classList.remove("typing");
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // On DOM Load initiate the effect
+      if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+  </script>
+  <!-- //typig-text-->
+
+  <!-- services owlcarousel -->
+  <script src="assets/js/owl.carousel.js"></script>
+
+  <!-- script for services -->
+  <script>
+    $(document).ready(function () {
+      $(".owl-two").owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: false,
+        responsiveClass: true,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        autoplaySpeed: 1000,
+        autoplayHoverPause: false,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false,
+          },
+          480: {
+            items: 1,
+            nav: false,
+          },
+          700: {
+            items: 1,
+            nav: false,
+          },
+          1090: {
+            items: 3,
+            nav: false,
+          },
+        },
+      });
+    });
+  </script>
+  <!-- //script for services -->
+
+  <!-- script for tesimonials carousel slider -->
+  <script>
+    $(document).ready(function () {
+      $("#owl-demo1").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false,
+          },
+          736: {
+            items: 1,
+            nav: false,
+          },
+          1000: {
+            items: 2,
+            nav: false,
+            loop: false,
+          },
+        },
+      });
+    });
+  </script>
+  <!-- //script for tesimonials carousel slider -->
+
+  <!-- video popup -->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".popup-with-zoom-anim").magnificPopup({
+        type: "inline",
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: "auto",
+
+        closeBtnInside: true,
+        preloader: false,
+
+        midClick: true,
+        removalDelay: 300,
+        mainClass: "my-mfp-zoom-in",
       });
 
-      //Main navigation Active Class Add Remove
-      $(".navbar-toggler").on("click", function () {
-        $("header").toggleClass("active");
+      $(".popup-with-move-anim").magnificPopup({
+        type: "inline",
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: "auto",
+
+        closeBtnInside: true,
+        preloader: false,
+
+        midClick: true,
+        removalDelay: 300,
+        mainClass: "my-mfp-slide-bottom",
       });
-      $(document).on("ready", function () {
+    });
+  </script>
+  <!-- //video popup -->
+
+  <!-- stats number counter-->
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/jquery.countup.js"></script>
+  <script>
+    $(".counter").countUp();
+  </script>
+  <!-- //stats number counter -->
+
+  <!-- disable body scroll which navbar is in active -->
+  <script>
+    $(function () {
+      $(".navbar-toggler").click(function () {
+        $("body").toggleClass("noscroll");
+      });
+    });
+  </script>
+  <!-- disable body scroll which navbar is in active -->
+
+  <!--/MENU-JS-->
+  <script>
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
         if ($(window).width() > 991) {
           $("header").removeClass("active");
         }
-        $(window).on("resize", function () {
-          if ($(window).width() > 991) {
-            $("header").removeClass("active");
-          }
-        });
       });
-    </script>
-    <!--//MENU-JS-->
+    });
+  </script>
+  <!--//MENU-JS-->
 
-    <!-- bootstrap js -->
-    <script src="assets/js/bootstrap.min.js"></script>
-  </body>
+  <!-- bootstrap js -->
+  <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
 </html>
